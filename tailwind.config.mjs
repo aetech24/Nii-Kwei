@@ -8,9 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         button: "#0D9488;"
+      },
+      fontFamily: {
+        sans: ['sans-serif'],
       },
     },
   },
