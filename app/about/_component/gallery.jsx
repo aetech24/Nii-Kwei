@@ -35,7 +35,7 @@ const Gallery = () => {
             ))}
           </div>
         </div>
-        <button className="bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600">
+        <button className="bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600 mt-6">
             View All
           </button>
       </div>
