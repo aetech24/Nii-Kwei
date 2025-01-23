@@ -60,12 +60,12 @@ const page = () => {
 
           
 
-          <div className='flex flex-col md:flex-row items-center justify-between gap-10 mt-20' data-aos="fade-right">
+          <div className='grid grid-cols-2 items-center gap-10 mt-20' data-aos="fade-right">
             <div className="flex flex-col gap-3">
-            <h1 className="text-3xl font-semibold relative pb-1">
-              Our Mission
-              <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
-            </h1>
+              <h1 className="text-3xl font-semibold relative pb-1">
+                Our Mission
+                <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
+              </h1>
               <ul>
                 <li className="text-lg">At Nii Kwei Ministries, we empower individuals through dynamic worship,
                      impactful outreach, and intentional community building, inspiring spiritual growth and equipping
