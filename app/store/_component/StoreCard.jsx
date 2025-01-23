@@ -16,7 +16,7 @@ const StoreCard = () => {
                             <p className='text-purple-500 text-medium'>${item.price}.00</p>
                         </div>
                         <button className='border border-button py-2 rounded-md text-button mx-4 hover:bg-button hover:text-white transition duration-300'>
-                            View Details
+                            Add to cart
                         </button>
                     </div>
                 </Link>

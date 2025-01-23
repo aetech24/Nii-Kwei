@@ -2,6 +2,10 @@
 
 import React, { useState } from "react";
 import { IoLockClosedOutline } from "react-icons/io5";
+import Card from '@/public/donate/card.png'
+import Bank from '@/public/donate/bank.png'
+import Paystack from '@/public/donate/paystack.png'
+import Image from "next/image";
 
 const PaymentForm = () => {
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -41,7 +45,7 @@ const PaymentForm = () => {
                 Credit/Debit Card 
                 </label>
             </div>
-            <p className="ml-2">💳</p>
+            <Image src={Card} alt="Card" width={30} height={20} />
           </div>
           <div className="flex items-center justify-between border rounded-md p-3">
             <div className="flex items-center cursor-pointer gap-3">
@@ -57,7 +61,7 @@ const PaymentForm = () => {
                 Bank Transfer 
                 </label>
             </div>
-            <p className="ml-2">🏦</p>
+            <Image src={Bank} alt="Card" width={30} height={20} />
           </div>
           <div className="flex items-center justify-between border rounded-md p-3">
             <div className="flex items-center cursor-pointer gap-3">
@@ -73,7 +77,7 @@ const PaymentForm = () => {
                 Paystack
                 </label>
             </div>
-            <p className="ml-2">💳</p>
+            <Image src={Paystack} alt="Card" width={60} height={40} />
           </div>
         </div>
       </div>

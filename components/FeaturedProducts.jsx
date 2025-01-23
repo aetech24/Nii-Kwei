@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
                 <p className='text-purple-500 text-medium'>${item.price.toFixed(2)}</p>
               </div>
               <button className='border border-button py-2 rounded-md text-button mx-4 hover:bg-button hover:text-white transition duration-300'>
-                View Details
+                Add to Cart
               </button>
             </div>
           </Link>
@@ -32,7 +32,7 @@ const FeaturedProducts = () => {
       <div className="text-center mt-8">
         <Link href="/store">
           <button className="bg-button text-white py-3 px-8 rounded-lg hover:bg-purple-600 transition duration-300">
-            View All Products
+            Shop Now
           </button>
         </Link>
       </div>

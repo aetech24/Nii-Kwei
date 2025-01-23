@@ -35,9 +35,9 @@ const Navbar = () => {
                     <div>
                         <FaSearch className='text-xl'/>
                     </div>
-                    <div>
+                    <Link href="/cart">
                         <FaShoppingCart className='text-xl'/>
-                    </div>
+                    </Link>
                 </div>
                 <div className="lg:hidden md:flex md:flex-col justify-end">
                     <button onClick={toggleNavbar}>
