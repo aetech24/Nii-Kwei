@@ -9,7 +9,7 @@ import Call from '@/public/Call.png'
 const page = () => {
   return (
     <div>
-      <div className="h-[70vh] flex items-center justify-center w-full relative font-sans">
+      <div className="h-[60vh] lg:h-[70vh] flex items-center justify-center w-full relative">
       {/* Hero Image */}
       <Image placeholder='blur'
         src={Hero}
@@ -17,7 +17,7 @@ const page = () => {
         className="bg-cover bg-center absolute w-full h-full"
       />
 
-      <div className="absolute inset-0 flex items-center justify-center md:justify-start px-4 md:px-20">
+      <div className="absolute inset-0 flex items-center justify-center md:justify-start px-6 md:px-20">
         <div
           className="text-white flex flex-col items-start"
           data-aos="fade-up"
@@ -34,7 +34,7 @@ const page = () => {
         </div>
       </div>
     </div>
-      <div className="py-10 px-4 lg:px-20">
+      <div className="py-10 px-6 lg:px-20">
         {/* Section Title */}
         <h2 className="text-3xl font-semibold text-gray-800">
           Send Us a Message
@@ -122,7 +122,7 @@ const page = () => {
       {/*LOCATION HERE*/}
 
 
-      <div className="my-16 px-4 md:px-8 lg:px-20 text-left">
+      <div className="my-16 px-6 md:px-8 lg:px-20 text-left">
   {/* Location Section */}
         <h2 className="text-2xl md:text-3xl font-bold mb-4 relative">
           Our Location

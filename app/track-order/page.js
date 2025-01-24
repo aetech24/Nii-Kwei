@@ -1,111 +1,3 @@
-// "use client"
-
-// import { Suspense, useState } from "react"
-// import { useSearchParams } from "next/navigation"
-// import { FaCheckCircle, FaTruck } from "react-icons/fa"
-// import { FiPackage } from "react-icons/fi"
-// import Hero from '@/public/stores/hero.png'
-// import Image from 'next/image'
-
-
-// const page = () => {
-//   const searchParams = useSearchParams()
-//   const initialOrderNumber = searchParams.get("order") || ""
-//   const [orderNumber, setOrderNumber] = useState(initialOrderNumber)
-//   const [isTracking, setIsTracking] = useState(!!initialOrderNumber)
-
-//   const trackingSteps = [
-//     {
-//       label: "Order Placed",
-//       date: "January 19, 2024 2:30 PM",
-//       icon: <FaCheckCircle className="w-5 h-5" />,
-//       status: "completed",
-//     },
-//     {
-//       label: "Order Confirmed",
-//       date: "January 19, 2024 2:35 PM",
-//       icon: <FaCheckCircle className="w-5 h-5" />,
-//       status: "completed",
-//     },
-//     {
-//       label: "Shipped",
-//       date: "January 20, 2024 10:15 AM",
-//       icon: <FiPackage className="w-5 h-5" />,
-//       status: "completed",
-//     },
-//     {
-//       label: "In transit",
-//       date: "January 20, 2024 10:15 AM",
-//       icon: <FiPackage className="w-5 h-5" />,
-//       status: "completed",
-//     },
-//     {
-//       label: "Out for Delivery",
-//       date: "January 21, 2024 9:00 AM",
-//       icon: <FaTruck className="w-5 h-5" />,
-//       status: "current",
-//     },
-//     {
-//       label: "Delivered",
-//       date: "Pending",
-//       icon: <FaCheckCircle className="w-5 h-5" />,
-//       status: "upcoming",
-//     },
-//   ]
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault()
-//     setIsTracking(true)
-//   }
-
-//   return (
-//     <div className="w-full">
-//         <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[60vh] flex items-center justify-center w-full">
-//             <Image src={Hero} alt='hero' className="bg-cover bg-center relative w-full h-full" />
-//             <div className='bg-black absolute w-full bg-opacity-20'></div>
-//             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
-//             </div>
-//         </div>
-//         <div className="max-w-5xl mx-auto bg-white relative -top-24 p-6 rounded-md border shadow-md">
-//         <div className="">
-//             <h1 className="text-2xl font-bold mb-6">Track Your Order</h1>
-//             <p>Enter your order number to track your shipment</p>
-
-//             <form onSubmit={handleSubmit} className="mb-8 w-full py-6">
-//                 <div className="flex items-center justify-between w-full gap-4">
-//                 <input
-//                     placeholder="Enter your order number"
-//                     value={orderNumber}
-//                     onChange={(e) => setOrderNumber(e.target.value)}
-//                     required
-//                     className="w-full border p-3 rounded-md"
-//                 />
-//                 <button type="submit" className="bg-button px-6 py-3 text-white rounded-md">Track</button>
-//                 </div>
-//             </form>
-//         </div>
-
-//       {isTracking && (
-//         <div>
-//         
-//         </div>
-//       )}
-//       </div>
-//     </div>
-//   )
-// }
-
-
-// const TrackOrderPage = () => {
-//     return (
-//       <Suspense fallback={<div>Loading...</div>}>
-//         <page />
-//       </Suspense>
-//     )
-//   }
-  
-// export default TrackOrderPage
-
 "use client"
 
 import { Suspense, useState } from "react"
@@ -114,6 +6,7 @@ import { FaCheckCircle, FaTruck } from "react-icons/fa"
 import { FiPackage } from "react-icons/fi"
 import Hero from '@/public/stores/hero.png'
 import Image from 'next/image'
+import Link from "next/link"
 
 const Page = () => {
   const searchParams = useSearchParams()
@@ -167,12 +60,12 @@ const Page = () => {
 
   return (
     <div className="w-full">
-      <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[60vh] flex items-center justify-center w-full">
+      <div className="max-[340px]:h-[90vh] max-sm:h-[50vh] md:h-[60vh] flex items-center justify-center w-full">
         <Image src={Hero} alt="hero" className="bg-cover bg-center relative w-full h-full" />
         <div className="bg-black absolute w-full bg-opacity-20"></div>
         <div className="absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20"></div>
       </div>
-      <div className="max-w-5xl mx-auto bg-white relative -top-24 p-6 rounded-md border shadow-md">
+      <div className="max-w-md lg:max-w-5xl mx-auto bg-white relative -top-24 p-6 rounded-md border shadow-md">
         <div className="">
           <h1 className="text-2xl font-bold mb-6">Track Your Order</h1>
           <p>Enter your order number to track your shipment</p>
@@ -201,17 +94,17 @@ const Page = () => {
            </div>
              <div className="mt-8 py-6 border-t border-b flex flex-col gap-3">
                  <div>
-                     <h3 className="text-xl">Estimated Delivery:</h3>
+                     <h3 className="text-lg lg:text-xl">Estimated Delivery:</h3>
                      <p className="text-gray-600">January 23, 2024</p> 
                  </div>
                  <div>
-                     <h3 className="text-xl">Shipping Center</h3>
+                     <h3 className="text-lg lg:text-xl">Shipping Center</h3>
                      <p className="text-gray-600">FexED</p> 
                      <p className="text-gray-600">#26783</p> 
                      <p className="text-gray-600">890</p> 
                  </div>
                  <div>
-                     <h3 className="text-xl">Current Location</h3>
+                     <h3 className="text-lg lg:text-xl">Current Location</h3>
                      <p className="text-gray-600">Accra, Greater Accra Region</p> 
                  </div>
              </div>
@@ -284,7 +177,9 @@ const Page = () => {
              </div>
              </div>
              <p className="text-xl font-semibold py-2">Need Help ?</p>
-             <button className="bg-button p-3 text-center w-full text-white rounded-md text-lg">Contact Us</button>
+             <Link href='/contact'>
+              <button className="bg-button p-3 text-center w-full text-white rounded-md text-lg">Contact Us</button>
+             </Link>
           </div>
         )}
       </div>

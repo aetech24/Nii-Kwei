@@ -13,26 +13,26 @@ const page = () => {
         <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[100vh] flex items-center justify-center w-full">
             <Image src={Hero} alt='hero' className="bg-cover bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
-            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
+            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">
-                <p className="text-lg relative pb-1">
+                <p className="lg:text-lg relative pb-1">
                   Volunteer
                   <span className="absolute left-0 bottom-0 w-10 h-1 bg-violet-500"></span>
                 </p>
-                <h1 className='text-5xl font-semibold w-[50%] leading-tight'>Join Us in Making a Difference</h1>
-                <p className='w-[60%]'>Your time and talents can transform lives. Become a volunteer today!</p>
+                <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[50%] leading-tight'>Join Us in Making a Difference</h1>
+                <p className='lg:w-[60%]'>Your time and talents can transform lives. Become a volunteer today!</p>
               </div>
-              <div className="flex items-center gap-6">
                 <Link href="/volunteer/apply">
-                  <button className="bg-button border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-600 transition duration-300">
+                  <button className="bg-button border border-button py-2 px-6 text-lg rounded-md max-lg:w-full hover:bg-purple-600 transition duration-300">
                     Get Started
                   </button>
                 </Link>
-              </div>
             </div>
         </div>
-        <div className='grid grid-cols-2 gap-10 items-center px-20 py-10'>
-            <Image src={Volunteer} alt="volunteer" width={700} height={500} />
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center lg:px-20 px-6 py-10'>
+            <div className='order-2 lg:order-1'>
+                <Image src={Volunteer} alt="volunteer" width={700} height={500} />
+            </div>
             <div className='flex flex-col gap-4'>
                 <h1 className="text-3xl font-semibold relative pb-1">
                 Why Volunteer?
@@ -53,12 +53,12 @@ const page = () => {
                 </div>
             </div>
         </div>
-        <div className='px-20 py-10'>
+        <div className='lg:px-20 px-6 py-10'>
             <h1 className="text-3xl font-semibold relative pb-1">
                 Volunteer Opportunities
                 <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
             </h1>
-            <div className='grid grid-cols-3 gap-6 py-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6'>
                 {opportunities.map((item, id) => {
                     return(
                         <div key={id} className='border rounded-md flex flex-col gap-4 items-start p-4 shadow-md'>
@@ -70,8 +70,10 @@ const page = () => {
                 })}
             </div>
         </div>
-        <div className='grid grid-cols-2 gap-10 items-center px-20 py-10'>
-            <Image src={Start} alt="volunteer" width={700} height={500} />
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center lg:px-20 px-6 py-10'>
+            <div className='order-2 lg:order-1'>
+                <Image src={Start} alt="volunteer" width={700} height={500} />
+            </div>
             <div className='flex flex-col gap-4'>
                 <h1 className="text-3xl font-semibold relative pb-1">
                 How to Get Started
@@ -90,18 +92,18 @@ const page = () => {
                         )
                     })}
                 </div>
-                <button className='py-3 px-6 bg-button text-center w-fit text-white rounded-md'>Apply Now</button>
+                <button className='py-3 px-6 bg-button text-center w-fit text-white rounded-md max-lg:w-full'>Apply Now</button>
             </div>
         </div>
-        <div className="flex items-center justify-center w-full">
+        <div className="flex max-lg:h-[50vh] items-center justify-center w-full">
             <Image src={Banner} alt='banner' className="bg-cover bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
-            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white px-20'>
-              <h1 className='text-5xl font-semibold w-[60%] text-center leading-none'>Ready to Make a Difference?</h1>
-              <p className='w-[60%] text-center'>Join our team of dedicated volunteers and be part of something bigger than yourself.</p>
-              <div className='flex items-center gap-8'>
-                <Link href='/volunteer/apply' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md">Apply Now</Link>
-                <button className="border border-white py-2 px-6 text-lg rounded-md">Contact Us</button>
+            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white lg:px-20'>
+              <h1 className='text-3xl lg:text-5xl font-semibold w-full lg:w-[60%] text-center leading-none'>Ready to Make a Difference?</h1>
+              <p className='lg:w-[60%] text-center w-full'>Join our team of dedicated volunteers and be part of something bigger than yourself.</p>
+              <div className='flex px-6 flex-col lg:flex-row items-center gap-4 lg:gap-8 max-lg:w-full'>
+                <Link href='/volunteer/apply' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md max-lg:w-full text-center">Apply Now</Link>
+                <button className="border border-white py-2 px-6 text-lg rounded-md max-lg:w-full">Contact Us</button>
               </div>
             </div>
         </div>

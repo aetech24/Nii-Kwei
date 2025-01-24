@@ -7,54 +7,41 @@ import Hero3 from '@/public/Event3.png';
 import Hero from '@/public/EventBackground.png';
 import Image from 'next/image';
 import Gallery from '../about/_component/gallery';
+import Link from 'next/link';
 
 const page = () => {
   return (
     <div>
-      <div className="md:h-[60vh] h-[70vw] flex items-center justify-center w-full relative font-sans mb-20">
-        <Image
-          src={Hero}
-          alt="hero section for about page"
-          className="bg-cover bg-center absolute w-full h-700"
-        />
-        <div className="absolute inset-0 flex items-center justify-start px-20">
-          <div
-            className="text-white flex flex-col items-start"
-            data-aos="fade-up"
-          >
-            <h1 className="text-5xl font-bold relative pb-2 pt-20 mt-40">
-              Experience the Power of
-              <br />
-              <span className="relative inline-block">
-                Worship and the Word
-              </span>
-              {/* <span className="absolute left-0 bottom-0 w-[50%] h-1 bg-violet-500"></span> */}
-            </h1>
-            <p className="md:text-xl mt-4">
-              Access sermons, worship sessions, and memorable moments from Nii
-              Kwei Ministries.
-            </p>
-          </div>
+      <div className="h-[100vh] flex items-center justify-center w-full">
+            <Image src={Hero} alt='hero' className="lg:object-cover object-fill bg-c bg-center relative w-full h-full" />
+            <div className='bg-black absolute w-full bg-opacity-20'></div>
+            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
+              <div className="w-full flex flex-col gap-5 justify-center text-white">
+                <p className="lg:text-lg relative pb-1">
+                  Welcome to Nii Kwei Ministries
+                  <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
+                </p>
+                <h1 className='text-4xl lg:text-5xl font-semibold lg:w-[70%] leading-tight'>Experience the Power of Worship and the Word</h1>
+                <p className='lg:w-[60%]'>Access sermons, worship sessions, and memorable moments from Nii Kwei Ministry.</p>
+              </div>
+              <div className="flex max-md:w-full flex-col lg:flex-row items-center lg:gap-6 gap-3">
+                <Link href="/store" className='max-md:w-full'>
+                  <button className="bg-button w-full border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-600 transition duration-300">
+                    Watch Sermon
+                  </button>
+                </Link>
+                <button className="border max-md:w-full border-white py-2 px-6 text-lg rounded-md">View Gallery</button>
+              </div>
+            </div>
         </div>
-      </div>
-
-      {/*BUTTONS*/}
-      <div className="flex space-x-4 px-20 mt-[-20]">
-        <button className="bg-button text-white py-2 px-6 rounded-lg hover:bg-green-600 focus:outline-none z-[1000]">
-          Watch Sermons
-        </button>
-        <button className="border-2 border-white text-white px-6 py-2 rounded-lg hover:bg-white hover:text-button focus:outline-none z-[1000]">
-          View Gallery
-        </button>
-      </div>
 
       {/*Video Section..........................................................................*/}
 
-      <div className="py-10 px-20 text-center mt-20">
+      <div className="py-10 px-6 lg:px-20 lg:text-center lg:mt-20">
         {/* Section Title */}
         <h2 className="text-3xl font-semibold">
           Latest Content
-          <div className="w-16 h-1 bg-violet-500 mx-auto mt-2 "></div>
+          <div className="w-16 h-1 bg-violet-500 lg:mx-auto mt-2 "></div>
         </h2>
 
         {/* Content Cards */}
@@ -127,7 +114,7 @@ const page = () => {
 
         {/* View All Button */}
         <div className="mt-8">
-          <button className="bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600">
+          <button className="bg-button text-white px-6 py-2 rounded-lg hover:bg-teal-600 max-lg:w-full">
             View All
           </button>
         </div>
@@ -143,7 +130,7 @@ const page = () => {
       {/*THE RESOURCE SECTION*/}
 
 
-<div className="py-10 px-4 lg:px-20">
+<div className="py-10 px-6 lg:px-20">
   {/* Section Title */}
   <h2 className="text-3xl font-semibold text-gray-800">
     Resources

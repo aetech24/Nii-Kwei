@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const StoreCard = () => {
   return (
-    <div className='grid grid-cols-3 gap-10 py-6'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-6'>
         {store.map((item, id) => {
             return (
                 <Link href={`/store/${id}`} key={id}>

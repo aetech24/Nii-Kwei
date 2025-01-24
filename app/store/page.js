@@ -11,33 +11,33 @@ const page = () => {
         <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[90vh] flex items-center justify-center w-full">
             <Image src={Hero} alt='hero' className="bg-cover bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
-            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
+            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">
                 <p className="text-lg relative pb-1">
                   Shop
                   <span className="absolute left-0 bottom-0 w-10 h-1 bg-violet-500"></span>
                 </p>
-                <h1 className='text-5xl font-semibold w-[65%] leading-tight'>Shop Nii Kwei Ministry Merchandise</h1>
-                <p className='w-[60%]'>Explore our collection of ministry-branded apparel, accessories, and digital products. Every purchase supports our mission to transform lives through worship and service</p>
+                <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[65%] leading-tight'>Shop Nii Kwei Ministry Merchandise</h1>
+                <p className='lg:w-[60%]'>Explore our collection of ministry-branded apparel, accessories, and digital products. Every purchase supports our mission to transform lives through worship and service</p>
               </div>
               <div className="flex items-center gap-6">
-                <button className="bg-button border border-button py-2 px-6 text-lg rounded-md">Shop Now</button>
+                <button className="bg-button border border-button py-2 px-6 text-lg rounded-md max-lg:w-full">Shop Now</button>
               </div>
             </div>
         </div>
         <div className="h-20 flex items-center justify-center w-full">
             <Image src={Banner} alt='hero' className="bg-cover bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
-            <div className='absolute max-md:mt-10 w-full flex flex-col items-center gap-5 justify-center text-white px-20'>
-                <p className='absolute text-white text-xl'>First-time shopper? Get 10% off your order with code WELCOME10</p>
+            <div className='absolute w-full flex flex-col items-center gap-5 justify-center text-white px-6 lg:px-20'>
+                <p className='absolute text-white lg:text-xl text-center'>First-time shopper? Get 10% off your order with code WELCOME10</p>
             </div>
         </div>
-        <div className="py-10 px-20 flex flex-col gap-6">
+        <div className="py-10 px-6 lg:px-20 flex flex-col gap-6">
             <h1 className="text-3xl font-semibold relative pb-1">
               Categories
               <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
             </h1>
-            <div className='grid grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
                 {category.map((item, id) => {
                     return (
                         <div key={id} className='relative rounded-md'>
@@ -52,7 +52,7 @@ const page = () => {
                 })}
             </div>
         </div>
-        <div className="py-10 px-20">
+        <div className="py-10 px-6 lg:px-20">
             <h1 className="text-3xl font-semibold relative pb-1">
               New Arrivals
               <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>

@@ -8,19 +8,19 @@ import shirt from '@/public/stores/t-shirt.png'
 const page = () => {
   return (
     <div>
-      <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[60vh] flex items-center justify-center w-full">
+      <div className="max-[340px]:h-[90vh] max-sm:h-[60vh] md:h-[60vh] flex items-center justify-center w-full">
             <Image src={Hero} alt='hero' className="bg-cover bg-center relative w-full h-full" />
              <div className='bg-black absolute w-full bg-opacity-20'></div>
-            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
+            <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">
-                <h1 className='text-5xl font-semibold w-[65%] leading-tight relative'>
+                <h1 className='text-3xl lg:text-5xl font-semibold w-[65%] leading-tight relative'>
                   Shopping Cart
                   <span className="absolute left-0 bottom-0 w-40 h-1 bg-violet-500"></span>
                 </h1>
               </div>
             </div>
         </div>
-      <div className="w-full px-20 relative -top-20 flex flex-col gap-6">
+      <div className="w-full px-6 lg:px-20 relative -top-20 flex flex-col gap-6">
         <div className="flex flex-col gap-8 border p-6 shadow-md bg-white rounded-md">
           {/* Product List */}
           <div className="flex flex-col gap-6">

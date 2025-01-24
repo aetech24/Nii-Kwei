@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { BsCheckCircle } from "react-icons/bs"
 
 
@@ -41,9 +42,11 @@ export default function ConfirmationPage({
             <button className="w-full py-2 border rounded-md">
               Share Your Support
             </button>
-            <button className="w-full text-white py-2 border rounded-md bg-teal-600 hover:bg-teal-700" onClick={() => (window.location.href = "/")}>
-              Return to Homepage
-            </button>
+            <Link href='/'>
+              <button className="w-full text-white py-2 border rounded-md bg-teal-600 hover:bg-teal-700" onClick={() => (window.location.href = "/")}>
+                Return to Homepage
+              </button>
+            </Link>
           </div>
           <p className="my-2 text-center">Your donation to Nii Kwei Ministries is tax-deductible. Please save your receipt for tax purposes.</p>
         </div>

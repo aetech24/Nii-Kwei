@@ -40,7 +40,7 @@ const Navbar = () => {
                             </li>
                         ))}
                     </ul>
-                    <div className="flex items-center gap-10 text-white relative">
+                    <div className="flex items-center lg:gap-10 gap-4 text-white relative">
                         <div>
                             <FaSearch className="text-xl" />
                         </div>

@@ -102,9 +102,11 @@ const OrderConfirmation = () => {
             Track Order
             </button>
         </Link>
-        <button className="bg-button w-full text-white font-medium py-2 px-4 rounded">
-          Continue Shopping
-        </button>
+        <Link href="/store">
+          <button className="bg-button w-full text-white font-medium py-2 px-4 rounded">
+            Continue Shopping
+          </button>
+        </Link>
       </div>
     </div>
   );

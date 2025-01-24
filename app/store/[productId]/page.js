@@ -52,9 +52,9 @@ const ProductDetails = ({ params }) => {
       <div className="max-w-6xl mx-auto p-6 relative -top-28 bg-white border rounded-md">
       <div className="flex flex-col gap-8">
         {/* Product Images */}
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-6">
           {/* Thumbnails */}
-          <div className="flex flex-col w-[265px] gap-2">
+          <div className="flex max-lg:w-full lg:flex-col w-[265px] gap-2">
             {[1, 2, 3].map((i) => (
               <div key={i} className="border rounded-md overflow-hidden">
                 <Image

@@ -103,7 +103,7 @@ const CheckoutForm = () => {
       {showConfirmation ? (
         <OrderConfirmation {...donationDetails} />
       ) : (
-        <div className="max-w-5xl mx-auto p-6 pt-10 -mt-32 border rounded-md bg-white">
+        <div className="w-full p-6 pt-10 -mt-32 border rounded-md bg-white">
             <h1 className="text-3xl font-semibold py-3">Checkout</h1>
           <div className="flex items-center justify-start">
             {/* Step 1 */}

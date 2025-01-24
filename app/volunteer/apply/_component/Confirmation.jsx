@@ -5,7 +5,7 @@ import Orientation from "@/public/volunteer/Orientation.png"
 
 const Confirmation = () => {
   return (
-    <div className="w-full p-6 flex flex-col gap-16">
+    <div className="w-full py-10 flex flex-col gap-16">
       {/* Application Details Header */}
       <div className="border rounded-md shadow-md">
         <div className="p-6">
