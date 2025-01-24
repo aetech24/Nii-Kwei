@@ -1,11 +1,10 @@
-import Image from 'next/image'
-import React from 'react'
-import Hero from '@/public/volunteer/hero2.png'
-import Volunteer from './_component/Volunteer'
-import Expect from '@/public/volunteer/expect.png'
-import Banner from '@/public/banner.png'
 import { expect } from '@/constants/volunteer'
+import Banner from '@/public/banner.png'
+import Expect from '@/public/volunteer/expect.png'
+import Hero from '@/public/volunteer/hero2.png'
+import Image from 'next/image'
 import Link from 'next/link'
+import Volunteer from './_component/Volunteer'
 
 const page = () => {
   return (
@@ -23,7 +22,7 @@ const page = () => {
         <div className='px-20 w-full'>
             <Volunteer />
         </div>
-        <div className='grid grid-cols-2 gap-10 px-20 py-16'>
+        <div className='grid grid-cols-2 items-center gap-10 px-20 py-16'>
             <Image src={Expect} alt="expect" width={700} height={500} />
             <div className='flex flex-col gap-4'>
                 <h1 className="text-3xl font-semibold relative pb-1">
@@ -34,11 +33,8 @@ const page = () => {
                     {expect.map((item, id) => {
                         return(
                             <div key={id} className='flex items-center gap-4'>
-                                <p className='w-[68px] h-[60px] flex items-center justify-center rounded-md bg-purple-500 text-white text-2xl font-bold'>{item.number}</p>
-                                <div className='flex flex-col gap-2'>
-                                    <p className='text-xl font-semibold'>{item.title}</p>
-                                    <p>{item.description}</p>
-                                </div>
+                                <p className='py-4 px-8 flex items-center justify-center rounded-md bg-purple-500 text-white text-2xl font-bold'>{item.number}</p>
+                                <p className='flex-wrap flex'>{item.description}</p>
                             </div>
                         )
                     })}

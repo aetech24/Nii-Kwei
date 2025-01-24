@@ -101,7 +101,7 @@ const page = () => {
               <p className='w-[60%] text-center'>Join our team of dedicated volunteers and be part of something bigger than yourself.</p>
               <div className='flex items-center gap-8'>
                 <Link href='/volunteer/apply' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md">Apply Now</Link>
-                <button className="border border-white py-2 px-6 text-lg rounded-md">Learn More</button>
+                <button className="border border-white py-2 px-6 text-lg rounded-md">Contact Us</button>
               </div>
             </div>
         </div>
