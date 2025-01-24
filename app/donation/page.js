@@ -9,7 +9,7 @@ const page = () => {
   return (
     <div>
         <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[100vh] flex items-center justify-center w-full">
-            <Image src={Hero} alt='hero' className="bg-cover bg-center relative w-full h-full" />
+            <Image placeholder='blur' src={Hero} alt='hero' className="bg-cover bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">
@@ -26,7 +26,7 @@ const page = () => {
             </div>
         </div>
         <div className="h-[55vh] flex items-center justify-center w-full">
-            <Image src={Banner} alt='hero' className="bg-cover bg-center relative w-full h-full" />
+            <Image placeholder='blur' src={Banner} alt='hero' className="bg-cover bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
                 <h1 className="text-3xl font-semibold relative pb-1 py-10">
@@ -37,7 +37,7 @@ const page = () => {
                     {impact.map((item, id) => {
                         return (
                             <div key={id} className='flex flex-col gap-3 items-center text-black bg-white p-4 rounded-md'>
-                                <Image src={item.image} alt="family" className='w-24' />
+                                <Image placeholder='blur' src={item.image} alt="family" className='w-24' />
                                 <h1 className='text-xl font-semibold'>{item.number}</h1>
                                 <p className='text-center text-sm'>{item.text}</p>
                             </div>
@@ -50,7 +50,7 @@ const page = () => {
             <DonationForm />
         </div>
         <div className="h-[75vh] flex items-center justify-center w-full">
-            <Image src={Banner} alt='hero' className="bg-cover bg-center relative w-full h-full" />
+            <Image placeholder='blur' src={Banner} alt='hero' className="bg-cover bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
                 <h1 className="text-3xl font-semibold relative pb-1 py-10">
@@ -62,7 +62,7 @@ const page = () => {
                     {give.map((item, id) => {
                         return (
                             <div key={id} className='flex flex-col items-center text-black bg-white p-4 rounded-md'>
-                                <Image src={item.image} alt="family" className='w-24' />
+                                <Image placeholder='blur' src={item.image} alt="family" className='w-24' />
                                 <p className='text-sm text-center'>{item.text}</p>
                             </div>
                         )
