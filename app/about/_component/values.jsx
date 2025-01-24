@@ -1,4 +1,16 @@
 import { FaCross, FaHandsHelping, FaHeart, FaShieldAlt, FaStar, FaUsers } from 'react-icons/fa';
+import Image from 'next/image';
+import faith from '@/public/faith.png'
+import community from '@/public/community.png'
+import Service from '@/public/Service.png'
+import Integrity from '@/public/Integrity.png'
+import Excellence from '@/public/Excellence.png'
+import compassion from '@/public/compassion.png'
+
+
+
+
+
 
 const coreValues = [
   {
@@ -6,42 +18,42 @@ const coreValues = [
     description: 'We are rooted in unwavering faith in God, trusting His promises and seeking His guidance in all we do.',
     subtext: '"Now faith is confidence in what we hope for and assurance about what we do not see."',
     reference: 'Hebrews 11:1',
-    icon: <FaCross className="text-4xl mb-2" />,
+    icon: <Image className="text-4xl mb-2" src={faith} />,
   },
   {
     title: 'Community',
     description: 'We value the power of togetherness, fostering authentic relationships and creating a sense of belonging for all.',
     subtext: '"And let us consider how we may spur one another on toward love and good deeds."',
     reference: 'Hebrews 10:24',
-    icon: <FaUsers className="text-4xl mb-2" />,
+    icon: <Image className="text-4xl mb-2" src={community} />,
   },
   {
     title: 'Service',
     description: 'We demonstrate Christ-like love by humility, compassion, and excellence, reflecting the love of Christ in action.',
     subtext: '"For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many."',
     reference: 'Mark 10:45',
-    icon: <FaHandsHelping className="text-4xl mb-2" />,
+    icon: <Image className="text-4xl mb-2" src={Service} />,
   },
   {
     title: 'Integrity',
     description: 'We uphold honesty, transparency, and accountability in all aspects of our ministry, honoring God in our words and actions.',
     subtext: '"The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity."',
     reference: 'Proverbs 11:3',
-    icon: <FaShieldAlt className="text-4xl mb-2" />,
+    icon: <Image className="text-4xl mb-2" src={Integrity} />,
   },
   {
     title: 'Excellence',
     description: 'We strive for excellence in everything we do, whether in our work, worship, or relationships.',
     subtext: 'Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.',
     reference: 'Colossians 3:23',
-    icon: <FaStar className="text-4xl mb-2" />,
+    icon: <Image className="text-4xl mb-2" src={Excellence} />,
   },
   {
     title: 'Compassion',
     description: 'We demonstrate Christ-like love by being kind and compassionate to one another, forgiving each other.',
     subtext: '"Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you."',
     reference: 'Ephesians 4:32',
-    icon: <FaHeart className="text-4xl mb-2" />,
+    icon: <Image className="text-4xl mb-2" src={compassion} />,
   },
 ];
 
