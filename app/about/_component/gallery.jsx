@@ -19,14 +19,14 @@ const Gallery = () => {
           </h2>
         <p className="mb-5">Capturing moments of worship</p>
         <div className="max-md:flex-col flex gap-5">
-          <Image
+          <Image placeholder='blur'
             src={image3} 
             alt="Gallery Image" 
             className="rounded-lg md:col-span-1"
           />
           <div className="grid grid-cols-2 gap-5">
             {images.map((src, index) => (
-              <Image
+              <Image placeholder='blur'
                 key={index}
                 src={src}
                 alt={`Gallery Image ${index + 2}`} 

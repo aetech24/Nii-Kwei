@@ -2,6 +2,7 @@ import Hero from '@/public/stores/hero.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiPhoneCall } from "react-icons/fi";
+import shirt from '@/public/stores/t-shirt.png'
 
 
 const page = () => {
@@ -27,7 +28,7 @@ const page = () => {
             <div className="flex items-center gap-4">
               <div className="h-16 w-16 overflow-hidden rounded bg-gray-100">
                 <Image
-                  src=""
+                  src={shirt}
                   alt="Black T-shirt"
                   width={64}
                   height={64}
@@ -57,7 +58,7 @@ const page = () => {
             <div className="flex items-center gap-4">
               <div className="h-16 w-16 overflow-hidden rounded bg-gray-100">
                 <Image
-                  src=""
+                  src={shirt}
                   alt="White Mug"
                   width={64}
                   height={64}

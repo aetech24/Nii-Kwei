@@ -11,7 +11,7 @@ const page = () => {
     <div>
       <div className="h-[70vh] flex items-center justify-center w-full relative font-sans">
       {/* Hero Image */}
-      <Image
+      <Image placeholder='blur'
         src={Hero}
         alt="hero section for about page"
         className="bg-cover bg-center absolute w-full h-full"
@@ -129,7 +129,7 @@ const page = () => {
           <span className="absolute left-0 bottom-0 w-[10%] h-1 bg-violet-500"></span>
         </h2>
         <p className="mb-8 flex items-center gap-2">
-          <Image src={Location} alt="LocationIcon" className="w-5 h-5" />
+          <Image placeholder='blur' src={Location} alt="LocationIcon" className="w-5 h-5" />
           123 Faith Avenue, Accra, Ghana
         </p>
         <div className="relative w-full h-64 sm:h-80 md:h-96 mb-16">
@@ -150,15 +150,15 @@ const page = () => {
         <div className="p-4 md:p-6 bg-white rounded-lg shadow-lg border border-gray-300">
           <div className="flex flex-col space-y-4">
             <div className="flex items-center gap-2">
-              <Image src={Call} alt="Phone Icon" className="w-6 h-6" />
+              <Image placeholder='blur' src={Call} alt="Phone Icon" className="w-6 h-6" />
               <span className="text-sm md:text-lg">+233 123 456 789</span>
             </div>
             <div className="flex items-center gap-2">
-              <Image src={Email} alt="Email Icon" className="w-6 h-6" />
+              <Image placeholder='blur' src={Email} alt="Email Icon" className="w-6 h-6" />
               <span className="text-sm md:text-lg">info@niikweiministries.org</span>
             </div>
             <div className="flex items-center gap-2">
-              <Image src={Clock} alt="Clock Icon" className="w-6 h-6" />
+              <Image placeholder='blur' src={Clock} alt="Clock Icon" className="w-6 h-6" />
               <span className="text-sm md:text-lg">Monday - Friday, 9:00 AM - 5:00 PM</span>
             </div>
           </div>

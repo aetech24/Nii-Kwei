@@ -26,7 +26,9 @@ const Confirmation = () => {
         <div className="grid md:grid-cols-3 gap-6">
           <div className="border rounded-md shadow-md">
             <div className="p-6 text-center flex justify-center items-center flex-col">
-              <Image src={Email} alt="email" width={50} height={50} className="flex justify-center items-center"/>
+              <Image 
+              placeholder="blur"
+              src={Email} alt="email" width={50} height={50} className="flex justify-center items-center"/>
               <h3 className="font-semibold mb-3">Check Your Email</h3>
               <p className="text-sm text-gray-600">
                 We've sent a confirmation email with important details about your application.
@@ -36,7 +38,7 @@ const Confirmation = () => {
 
           <div className="border rounded-md shadow-md">
             <div className="p-6 text-center flex justify-center items-center flex-col">
-              <Image src={Calendar} alt="email" width={50} height={50} className="flex justify-center items-center"/>
+              <Image placeholder="blur" src={Calendar} alt="email" width={50} height={50} className="flex justify-center items-center"/>
               <h3 className="font-semibold mb-3">Await Our Response</h3>
               <p className="text-sm text-gray-600">
                 We've sent a confirmation email with important details about your application.
@@ -47,7 +49,7 @@ const Confirmation = () => {
           <div className="border rounded-md shadow-md">
             <div className="p-6 text-center">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                <Image src={Orientation} alt="email" width={50} height={50} className="flex justify-center items-center"/>
+                <Image placeholder="blur" src={Orientation} alt="email" width={50} height={50} className="flex justify-center items-center"/>
               </div>
               <div className="flex flex-col">
               <h3 className="font-semibold mb-3">Prepare for Orientation</h3>
