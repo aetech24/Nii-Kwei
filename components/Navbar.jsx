@@ -21,7 +21,7 @@ const Navbar = () => {
 
     return (
         <nav className="fixed w-full top-0 z-50 py-3 backdrop-blur-lg bg-black bg-opacity-20">
-            <div className="container px-16 mx-auto relative text-sm">
+            <div className="container px-6 lg:px-16 mx-auto relative text-sm">
                 <div className="flex justify-between items-center">
                     <Link href="/" className="flex items-center flex-shrink-0">
                         <Image src={logo} alt="" className="w-10" />
@@ -52,19 +52,19 @@ const Navbar = () => {
                                 </span>
                             )}
                         </Link>
-                    </div>
-                    <div className="lg:hidden md:flex md:flex-col justify-end">
-                        <button onClick={toggleNavbar}>
-                            {mobileDrawerOpen ? (
-                                <AiOutlineClose className="text-2xl font-bold" />
-                            ) : (
-                                <CgMenu className="text-2xl font-bold" />
-                            )}
-                        </button>
+                        <div className="lg:hidden md:flex md:flex-col justify-end text-white">
+                            <button onClick={toggleNavbar}>
+                                {mobileDrawerOpen ? (
+                                    <AiOutlineClose className="text-2xl  font-bold" />
+                                ) : (
+                                    <CgMenu className="text-2xl font-bold" />
+                                )}
+                            </button>
+                        </div>
                     </div>
                 </div>
                 {mobileDrawerOpen && (
-                    <div className="fixed right-0 z-20 w-full p-12 flex flex-col justify-center items-center lg:hidden bg-purple text-white bg-opacity-70">
+                    <div className="fixed right-0 z-20 w-full p-12 flex flex-col justify-center items-center lg:hidden backdrop-blur-lg bg-black bg-opacity-50 text-white">
                         <ul className="font-semibold text-lg">
                             {["/", "/about", "/contact", "/donation", "/store", "/event"].map((link, index) => (
                                 <li
@@ -80,15 +80,6 @@ const Navbar = () => {
                                 </li>
                             ))}
                         </ul>
-                        <div
-                            onClick={toggleNavbar}
-                            className="my-10 flex lg:hidden text-white text-xl justify-center items-center bg-gradient-to-r from-pink to-purple rounded-3xl hover:scale-110 duration-500 ease-linear"
-                        >
-                            <Link href="/contact" className="md:py-2 py-1 px-2 md:px-4 flex items-center gap-2">
-                                Contact Us
-                                <BsArrowUpRight />
-                            </Link>
-                        </div>
                     </div>
                 )}
             </div>

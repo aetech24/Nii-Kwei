@@ -12,7 +12,7 @@ const FeaturedProducts = () => {
         Featured Products
         <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
       </h2>
-      <div className='grid grid-cols-3 gap-10'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
         {featuredProducts.map((item, id) => (
           <Link href={`/store/${id}`} key={id}>
             <div className='flex flex-col gap-2 shadow-xl pb-4 rounded-md transition duration-300 hover:shadow-2xl'>
@@ -30,8 +30,8 @@ const FeaturedProducts = () => {
         ))}
       </div>
       <div className="text-center mt-8">
-        <Link href="/store">
-          <button className="bg-button text-white py-3 px-8 rounded-lg hover:bg-purple-600 transition duration-300">
+        <Link href="/store" className='max-md:w-full'>
+          <button className="bg-button text-white py-3 px-8 rounded-lg hover:bg-purple-600 transition duration-300 max-lg:w-full">
             Shop Now
           </button>
         </Link>

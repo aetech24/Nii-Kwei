@@ -35,14 +35,14 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <div className="px-20 text-center my-16">
+    <div className="lg:px-20 px-6 lg:text-center my-16">
       <h2 className="text-3xl font-bold mb-8 relative pb-1">
         Meet Our Team
-      <span className="absolute left-1/2 bottom-0 w-[8%] h-1 bg-violet-500"></span>
+        <span className="absolute left-0 lg:left-1/2 bottom-0 w-[20%] h-1.5 rounded-full bg-violet-500"></span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {teamMembers.map((member) => (
-          <div key={member.name} className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div key={member.name} className="bg-white rounded-lg lg:shadow-lg overflow-hidden">
             <Image
               src={member.imageUrl}
               alt={member.name}
