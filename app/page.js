@@ -74,7 +74,7 @@ const page = () => {
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white px-20'>
               <h1 className='text-5xl font-semibold w-[40%] text-center leading-none'>Get Involved And A Difference</h1>
               <p className='w-[60%] text-center'>Join our community of passionate volunteers and help us transform lives through service and worship.</p>
-              <button className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md">Volunteer</button>
+              <Link href='/volunteer' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md">Volunteer</Link>
             </div>
         </div>
         <div className='flex flex-col gap-6 items-center py-12 px-16'>

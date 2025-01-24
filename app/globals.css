@@ -1,9 +1,12 @@
+@import '@fontsource/poppins/index.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 body {
+  font-family: 'Poppins', sans-serif;
   background: white;
   font-family: Arial, Helvetica, sans-serif;
 }
