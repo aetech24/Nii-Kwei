@@ -40,7 +40,7 @@ const page = () => {
       <div className="lg:py-10 flex flex-col gap-10 lg:px-20 px-6">
         <div className='py-10 flex flex-col gap-10'>
           <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10' data-aos="fade-right">
-            <div className="order-2 lg:order-1">
+            <div className="">
               <Image src={Singer1} alt="Founder1" width={700} height={500} />
             </div>
             <div className="flex flex-col gap-3">
