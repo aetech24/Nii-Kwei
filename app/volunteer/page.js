@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Hero from '@/public/volunteer/hero.png'
+import Hero2 from '@/public/mobile-home.png'
 import Volunteer from '@/public/volunteer/volunteer.png'
 import Start from '@/public/volunteer/start.png'
 import Banner from '@/public/banner.png'
@@ -11,7 +12,8 @@ const page = () => {
   return (
     <div>
         <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[100vh] flex items-center justify-center w-full">
-            <Image src={Hero} alt='hero' className="bg-cover bg-center relative w-full h-full" />
+            <Image src={Hero} alt='hero' className="bg-cover max-lg:hidden bg-center relative w-full h-full" />
+            <Image src={Hero2} alt='hero' className="bg-cover lg:hidden bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">

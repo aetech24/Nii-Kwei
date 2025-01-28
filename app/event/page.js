@@ -5,6 +5,7 @@ import Hero1 from '@/public/Event1.png';
 import Hero2 from '@/public/Event2.png';
 import Hero3 from '@/public/Event3.png';
 import Hero from '@/public/EventBackground.png';
+import Hero2 from '@/public/mobile-home.png';
 import Image from 'next/image';
 import Gallery from '../about/_component/gallery';
 import Link from 'next/link';
@@ -13,7 +14,8 @@ const page = () => {
   return (
     <div>
       <div className="h-[100vh] flex items-center justify-center w-full">
-            <Image src={Hero} alt='hero' className="lg:object-cover object-fill bg-c bg-center relative w-full h-full" />
+            <Image src={Hero} alt='hero' className="lg:object-cover max-lg:hidden object-fill bg-c bg-center relative w-full h-full" />
+            <Image src={Hero} alt='hero' className="lg:object-cover lg:hidden object-fill bg-c bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">

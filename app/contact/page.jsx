@@ -1,4 +1,5 @@
 import Hero from '@/public/ContactBack.png';
+import Hero2 from '@/public/mobile-contact.png';
 import Image from 'next/image';
 import Location from '@/public/Location_Icon.png';
 import Clock from '@/public/Clock.png';
@@ -14,7 +15,12 @@ const page = () => {
       <Image placeholder='blur'
         src={Hero}
         alt="hero section for about page"
-        className="bg-cover bg-center absolute w-full h-full"
+        className="bg-cover max-lg:hidden bg-center absolute w-full h-full"
+      />
+      <Image placeholder='blur'
+        src={Hero2}
+        alt="hero section for about page"
+        className="bg-cover lg:hidden bg-center absolute w-full h-full"
       />
 
       <div className="absolute inset-0 flex items-center justify-center md:justify-start px-6 md:px-20">

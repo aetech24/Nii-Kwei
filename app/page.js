@@ -1,8 +1,10 @@
 import React from 'react'
 import Hero from '@/public/Home-hero.png'
+import Hero2 from '@/public/mobile-home.png'
 import About from '@/public/about.png'
 import Deco from '@/public/decor.png'
 import Banner from '@/public/banner.png'
+import Banner2 from '@/public/mobile-banner.png'
 import Image from 'next/image'
 import EventCard from '@/components/EventCard'
 import StoreCard from './store/_component/StoreCard'
@@ -14,7 +16,8 @@ const page = () => {
   return (
     <div>
       <div className="h-[100vh] flex items-center justify-center w-full">
-            <Image src={Hero} alt='hero' className="lg:object-cover object-fill bg-c bg-center relative w-full h-full" />
+            <Image src={Hero} alt='hero' className="lg:object-cover max-lg:hidden object-fill bg-c bg-center relative w-full h-full" />
+            <Image src={Hero2} alt='hero' className="lg:object-cover lg:hidden object-fill bg-c bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">
@@ -75,7 +78,8 @@ const page = () => {
           </div>
         </div>
         <div className="flex items-center justify-center w-full max-lg:h-[40vh]">
-            <Image src={Banner} alt='banner' className="bg-cover bg-center relative w-full h-full" />
+            <Image src={Banner} alt='banner' className="bg-cover max-lg:hidden bg-center relative w-full h-full" />
+            <Image src={Banner2} alt='banner' className="bg-cover lg:hidden bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white px-6 lg:px-20'>
               <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[40%] text-center leading-none'>Get Involved And A Difference</h1>

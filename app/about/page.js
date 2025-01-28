@@ -1,4 +1,5 @@
 import Hero from '@/public/Background.png';
+import Hero2 from '@/public/mobile-about.png';
 import Singer1 from '@/public/Image1.png';
 import Singer2 from '@/public/Image2.png';
 // import Founder2 from '@/public/Image2.png';
@@ -17,7 +18,12 @@ const page = () => {
         <Image
           src={Hero}
           alt="hero section for about page"
-          className="bg-cover bg-center absolute w-full h-full"
+          className="bg-cover max-lg:hidden bg-center absolute w-full h-full"
+        />
+        <Image
+          src={Hero2}
+          alt="hero section for about page"
+          className="bg-cover lg:hidden bg-center absolute w-full h-full"
         />
         <div className="absolute inset-0 flex items-center justify-start px-6 lg:px-20">
           <div
@@ -40,7 +46,7 @@ const page = () => {
       <div className="lg:py-10 flex flex-col gap-10 lg:px-20 px-6">
         <div className='py-10 flex flex-col gap-10'>
           <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10' data-aos="fade-right">
-            <div className="order-2 lg:order-1">
+            <div className="max-lg:order-2">
               <Image src={Singer1} alt="Founder1" width={700} height={500} />
             </div>
             <div className="flex flex-col gap-3">

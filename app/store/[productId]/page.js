@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Hero from '@/public/stores/hero.png'
+import Hero2 from '@/public/stores/mobile-hero.png'
 import { FaStar } from 'react-icons/fa';
 
 
@@ -40,7 +41,8 @@ const ProductDetails = ({ params }) => {
   return (
     <div className="w-full">
       <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[60vh] flex items-center justify-center w-full">
-        <Image src={Hero} alt='hero' className="bg-cover bg-center relative w-full h-full" />
+        <Image src={Hero} alt='hero' className="bg-cover max-lg:hidden bg-center relative w-full h-full" />
+        <Image src={Hero2} alt='hero' className="bg-cover lg:hidden bg-center relative w-full h-full" />
         <div className='bg-black absolute w-full bg-opacity-20'></div>
         <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
           <h1 className="text-3xl font-semibold relative pb-1">
