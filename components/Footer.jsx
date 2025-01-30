@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import Logo from "@/public/logo.png"
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -11,11 +12,11 @@ const Footer = () => {
         <div className='flex flex-col gap-3'>
           <h1 className='text-purple-500 text-xl font-semibold'>Quick Links</h1>
           <ul className='flex flex-col gap-2 max-lg:text-sm'>
-            <li>About Us</li>
-            <li>Shop Now</li>
-            <li>Contact Us</li>
-            <li>Donate Now</li>
-            <li>Join Us</li>
+            <Link href='/about'>About Us</Link>
+            <Link href="/store">Shop Now</Link>
+            <Link href='/contact'>Contact Us</Link>
+            <Link href='/donate'>Donate Now</Link>
+            <Link href='/volunteer'>Join Us</Link>
           </ul>
         </div>
         <div className='flex flex-col gap-3'>

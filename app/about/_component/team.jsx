@@ -6,6 +6,8 @@ import niiKwei2 from "@/public/singer2.png";
 import niiKwei3 from "@/public/Ephraimm.jpeg";
 import niiKwei4 from "@/public/singer4.png";
 import niiKwei5 from "@/public/Ruby.jpeg";
+import niiKwei6 from "@/public/rene.jpg";
+import niiKwei7 from "@/public/sam.jpg";
 
 const teamMembers = [
   {
@@ -45,10 +47,26 @@ const teamMembers = [
   {
     name: "Ruby Oye Otoo",
     title: "Administrative Manager",
+    shortDescription: "Rene serves as the Production and Events Manager for Nii Kwei Ministries. With a professional background as a Credit Analyst at Stanbic Bank Ghana Ltd,...",
+    fullDescription:
+      "Rene serves as the Production and Events Manager for Nii Kwei Ministries. With a professional background as a Credit Analyst at Stanbic Bank Ghana Ltd, she combines her organizational expertise with a deep passion for ministry.Rene is a committed member of the Tabernacle Praise Choir at Fountain of Glory A/G, where her love for worship is expressed through music. She is also the former President of the Assemblies of God Campus Ministry (AGCM), a role that honed her leadership skills and experience in coordinating impactful ministry activities. At Nii Kwei Ministries, Rene is dedicated to planning and executing events and productions that inspire, engage, and glorify God. Her unique blend of professional and spiritual dedication ensures that every event reflects the ministry’s vision of transforming lives and building a Christ-centered legacy.",
+    imageUrl: niiKwei5,
+  },
+  {
+    name: "Rene Twum",
+    title: "Production and Events Manager",
     shortDescription: "With over two decades of diverse experience across various industries, Ruby Oye Otoo brings a wealth of expertise, professionalism, and passion to her role as Administrative Manager at Nii Kwei Ministries...",
     fullDescription:
       "With over two decades of diverse experience across various industries, Ruby Oye Otoo brings a wealth of expertise, professionalism, and passion to her role as Administrative Manager at Nii Kwei Ministries. Her dedication to the work of the Lord and her commitment to advancing the ministry’s mission make her an invaluable asset to the team. Ruby is a dynamic leader, known for her exceptional organizational skills and ability to foster efficient workflows, ensuring the ministry operates seamlessly to achieve its God-given purpose. She views her administrative role as a form of ministry, supporting the work of Nii Kwei Ministries with diligence and a servant’s heart. Her extensive career has honed her capabilities in administration, team management, and strategic planning, enabling her to address complex challenges with creativity and faith. Ruby’s unwavering commitment to excellence is driven by her deep desire to see God’s kingdom thrive and to empower  the team to fulfill their divine calling. At Nii Kwei Ministries, Ruby plays a pivotal role in overseeing operations, managing resources, and ensuring the smooth execution of programs and activities that impact lives and glorify God. She is deeply passionate about mentoring and inspiring others, creating a culture of collaboration, spiritual growth, and purpose within the organization.",
-    imageUrl: niiKwei5,
+    imageUrl: niiKwei6,
+  },
+  {
+    name: "Sam Bilson Junior",
+    title: "Music Distribution Lead",
+    shortDescription: "Sam Bilson Junior is a dynamic professional whose multifaceted expertise in music distribution and media has positioned him as a vital asset to Nii Kwei Ministries...",
+    fullDescription:
+      "Sam Bilson Junior is a dynamic professional whose multifaceted expertise in music distribution and media has positioned him as a vital asset to Nii Kwei Ministries. With a deep passion for creativity, technology, and innovation, Sam empowers individuals and ministries to maximize their impact while glorifying God through excellence. Sam’s extensive media background includes experience with some of Ghana’s leading radio stations, such as Adehyeɛ FM, Accra FM, Okese FM, and GH Radio1. His engaging personality and insightful grasp of media trends have made him a trusted voice and an influential figure. Additionally, his contributions to digital platforms like Gospel 360 Africa and Ghorpomo highlight his dedication to amplifying gospel music and ministry content in the digital space. At Nii Kwei Ministries, Sam leverages his media experience to enhance the ministry’s communication strategies, ensuring its vision reaches diverse audiences effectively.As the Music Distribution Lead at Nii Kwei Ministries, Sam bridges the gap between the Minstrel and his global audience. His role involves equipping musicians with innovative tools and strategies to expand their reach and generate meaningful engagement. By empowering the minstrel, he helps amplify his message and advance the ministry’s goal of spreading God’s Word through music. Sam’s commitment to fostering innovation and creativity aligns perfectly with Nii Kwei Ministries’ mission to transform lives for Christ. Through his diverse skill set and dedication, Sam continues to champion the Ministries’ growth, helping it connect with audiences globally while empowering creatives to use their talents for God’s glory.",
+    imageUrl: niiKwei7,
   },
 ];
 
@@ -83,7 +101,7 @@ const TeamSection = () => {
               alt={member.name}
               width={300}
               height={300}
-              className="w-full h-90 object-cover"
+              className="w-full h-[300px] object-cover"
             />
             <div className="p-4">
               <h3 className="text-xl font-semibold">{member.name}</h3>
