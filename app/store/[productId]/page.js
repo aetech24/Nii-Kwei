@@ -3,19 +3,35 @@
 import { store } from '@/constants/store';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from '@/public/stores/hero.png'
 import Hero2 from '@/public/stores/mobile-hero.png'
 import { FaStar } from 'react-icons/fa';
-
+import { useCart } from '@/context/CartContext';
+import { toast } from 'react-hot-toast';
 
 const ProductDetails = ({ params }) => {
-  const router = useRouter();
-  const [selectedSize, setSelectedSize] = useState('');
-  const [quantity, setQuantity] = useState(1);
+  const unwrappedParams = React.use(params)
+  const { productId } = unwrappedParams
   
+  const router = useRouter();
+  const { addToCart } = useCart();
+  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedColor, setSelectedColor] = useState('');
+  const [quantity, setQuantity] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Find the product based on the ID from the URL
-  const product = store.find((p, index) => index.toString() === params.productId);
+  const product = store.find((p, index) => index.toString() === productId);
+
+  if (!mounted) {
+    return null;
+  }
 
   if (!product) {
     return <div className="text-center py-20">Product not found</div>;
@@ -29,14 +45,41 @@ const ProductDetails = ({ params }) => {
     }
   };
 
-  const handleAddToCart = () => {
-    if (product.category === "Clothing" && !selectedSize) {
-      alert("Please select a size");
-      return;
+  const handleAddToCart = async () => {
+    if (product.category === "Clothing") {
+      if (!selectedSize) {
+        toast.error("Please select a size");
+        return;
+      }
+      if (!selectedColor) {
+        toast.error("Please select a color");
+        return;
+      }
     }
-    // Add cart logic here
-    router.push('/cart');
+
+    setLoading(true);
+    try {
+      const productToAdd = {
+        ...product,
+        id: productId,
+        size: selectedSize,
+        color: selectedColor,
+        quantity
+      };
+      
+      addToCart(productToAdd);
+      toast.success('Added to cart successfully!');
+      router.push('/cart');
+    } catch (error) {
+      toast.error('Failed to add to cart');
+      console.error('Add to cart error:', error);
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const sizes = ["XS", "S", "M", "L", "XL", "2XL"];
+  const colors = ["Black", "White", "Navy"];
 
   return (
     <div className="w-full">
@@ -52,154 +95,167 @@ const ProductDetails = ({ params }) => {
         </div>
       </div>
       <div className="max-w-6xl mx-auto p-6 relative -top-28 bg-white border rounded-md">
-      <div className="flex flex-col gap-8">
-        {/* Product Images */}
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-6">
-          {/* Thumbnails */}
-          <div className="flex max-lg:w-full lg:flex-col w-[265px] gap-2">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="border rounded-md overflow-hidden">
-                <Image
-                  src={product.image}
-                  alt={`Thumbnail ${i}`}
-                  width={700}
-                  height={500}
-                  className="object-cover"
-                />
+        <div className="flex flex-col gap-8">
+          {/* Product Images */}
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-6">
+            {/* Thumbnails */}
+            <div className="flex max-lg:w-full lg:flex-col w-[265px] gap-2">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="border rounded-md overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={`Thumbnail ${i}`}
+                    width={700}
+                    height={500}
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Main Image */}
+            <div className="flex-1 bg-gray-100 rounded-lg overflow-hidden">
+              <Image
+                src={product.image}
+                alt="Product Image"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+
+          {/* Product Info */}
+          <div className="space-y-6 w-full">
+            <div>
+              <h1 className="text-2xl font-semibold mb-2">{product.name}</h1>
+              <div className="flex items-center gap-2 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                ))}
+                <span className="text-sm text-gray-500">(7 reviews)</span>
               </div>
-            ))}
-          </div>
-          {/* Main Image */}
-          <div className="flex-1 bg-gray-100 rounded-lg overflow-hidden">
-            <Image
-              src={product.image}
-              alt="Product Image"
-              width={400}
-              height={400}
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </div>
-
-        {/* Product Info */}
-        <div className="space-y-6 w-full">
-          <div>
-            <h1 className="text-2xl font-semibold mb-2">{product.name}</h1>
-            <div className="flex items-center gap-2 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-              ))}
-              <span className="text-sm text-gray-500">(7 reviews)</span>
+              <div className="text-xl font-semibold">${product.price.toFixed(2)}</div>
             </div>
-            <div className="text-xl font-semibold">${product.price.toFixed(2)}</div>
-          </div>
 
-          {/* Size Selection */}
-          {product.category === "Clothing" && (
-          <div className='w-full'>
-            <label className="block text-sm font-medium mb-2">Select Size</label>
-            <div className="flex items-center gap-2">
-              {["XS", "S", "M", "L", "XL", "2XL"].map((size) => (
-                <button
-                key={size}
-                onClick={() => setSelectedSize(size)}
-                className={`border px-4 py-2 rounded-md transition-colors ${
-                  selectedSize === size 
-                    ? 'border-purple-500 bg-purple-500 text-white font-semibold' 
-                    : 'border-gray-300 hover:border-purple-500'
-                }`}
-              >
-                  {size}
-                </button>
-              ))}
-            </div>
-          </div>
-          )}
+            {/* Size Selection */}
+            {product.category === "Clothing" && (
+              <div className='w-full'>
+                <label className="block text-sm font-medium mb-2">Select Size</label>
+                <div className="flex items-center gap-2">
+                  {sizes.map((size) => (
+                    <button
+                      key={size}
+                      onClick={() => setSelectedSize(size)}
+                      className={`border px-4 py-2 rounded-md transition-colors ${
+                        selectedSize === size 
+                          ? 'border-purple-500 bg-purple-500 text-white font-semibold' 
+                          : 'border-gray-300 hover:border-purple-500'
+                      }`}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
-          {/* Color Selection */}
-          <div className='w-full'>
-            <label className="block text-sm font-medium mb-2">Select Color</label>
-            <div className="flex gap-2">
-              {["Black", "White", "Navy"].map((color) => (
-                <button
-                  key={color}
-                  className="px-4 py-2 border rounded hover:border-black focus:border-black focus:outline-none"
+            {/* Color Selection */}
+            {product.category === "Clothing" && (
+              <div className='w-full'>
+                <label className="block text-sm font-medium mb-2">Select Color</label>
+                <div className="flex gap-2">
+                  {colors.map((color) => (
+                    <button
+                      key={color}
+                      onClick={() => setSelectedColor(color)}
+                      className={`px-4 py-2 border rounded transition-colors ${
+                        selectedColor === color
+                          ? 'border-purple-500 bg-purple-500 text-white font-semibold'
+                          : 'border-gray-300 hover:border-purple-500'
+                      }`}
+                    >
+                      {color}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Quantity */}
+            <div>
+              <label className="block text-sm font-medium mb-2">Quantity</label>
+              <div className="flex items-center gap-2 w-fit border rounded">
+                <button 
+                  onClick={() => handleQuantityChange('decrease')}
+                  className="border border-gray-300 px-4 py-2 rounded-md hover:border-purple-500"
+                  disabled={quantity <= 1}
                 >
-                  {color}
+                  -
                 </button>
-              ))}
+                <span className="w-12 text-center">{quantity}</span>
+                <button 
+                  onClick={() => handleQuantityChange('increase')}
+                  className="border border-gray-300 px-4 py-2 rounded-md hover:border-purple-500"
+                >
+                  +
+                </button>
+              </div>
             </div>
-          </div>
 
-          {/* Quantity */}
-          <div>
-            <label className="block text-sm font-medium mb-2">Quantity</label>
-            <div className="flex items-center gap-2 w-fit border rounded">
-            <button 
-                onClick={() => handleQuantityChange('decrease')}
-                className="border border-gray-300 px-4 py-2 rounded-md hover:border-purple-500"
-                disabled={quantity <= 1}
-              >
-                -
-              </button>
-              <span className="w-12 text-center">{quantity}</span>
-              <button 
-                onClick={() => handleQuantityChange('increase')}
-                className="border border-gray-300 px-4 py-2 rounded-md hover:border-purple-500"
-              >
-                +
-              </button>
+            {/* Add to Cart */}
+            <button
+              onClick={handleAddToCart}
+              disabled={loading}
+              className="w-full bg-button text-white p-3 rounded-md hover:bg-purple-600 transition duration-300 disabled:bg-gray-400"
+            >
+              {loading ? 'Adding to Cart...' : 'Add to Cart'}
+            </button>
+
+            {/* Delivery Info */}
+            <div className="space-y-4 pt-4 w-full">
+              <div>
+                <h3 className="font-medium">Free delivery</h3>
+                <p className="text-sm text-gray-500">For orders over $50</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Easy Returns</h3>
+                <p className="text-sm text-gray-500">60 day return window</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Secure Checkout</h3>
+                <p className="text-sm text-gray-500">SSL/TLS encryption enabled</p>
+              </div>
             </div>
-          </div>
 
-          {/* Add to Cart */}
-          <button onClick={handleAddToCart} className="w-full bg-teal-600 hover:bg-teal-700 text-white p-3 rounded-md">Add to Cart</button>
+            <hr />
 
-          {/* Delivery Info */}
-          <div className="space-y-4 pt-4 w-full">
+            {/* Product Details */}
             <div>
-              <h3 className="font-medium">Free delivery</h3>
-              <p className="text-sm text-gray-500">For orders over $50</p>
+              <h2 className="font-medium mb-2">Product Details</h2>
+              <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                <li>Premium quality 100% cotton</li>
+                <li>Pre-shrunk fabric</li>
+                <li>Double-stitched seams</li>
+                <li>Regular unisex fit</li>
+                <li>Machine washable</li>
+                <li>High-quality print that won't fade</li>
+              </ul>
             </div>
+
+            {/* Size & Fit */}
             <div>
-              <h3 className="font-medium">Easy Returns</h3>
-              <p className="text-sm text-gray-500">60 day return window</p>
+              <h2 className="font-medium mb-2">Size & Fit</h2>
+              <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                <li>Regular fit</li>
+                <li>True to size</li>
+                <li>Model is 6'0" wearing size M</li>
+              </ul>
             </div>
-            <div>
-              <h3 className="font-medium">Secure Checkout</h3>
-              <p className="text-sm text-gray-500">SSL/TLS encryption enabled</p>
-            </div>
-          </div>
-
-          <hr />
-
-          {/* Product Details */}
-          <div>
-            <h2 className="font-medium mb-2">Product Details</h2>
-            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-              <li>Premium quality 100% cotton</li>
-              <li>Pre-shrunk fabric</li>
-              <li>Double-stitched seams</li>
-              <li>Regular unisex fit</li>
-              <li>Machine washable</li>
-              <li>High-quality print that won't fade</li>
-            </ul>
-          </div>
-
-          {/* Size & Fit */}
-          <div>
-            <h2 className="font-medium mb-2">Size & Fit</h2>
-            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-              <li>Regular fit</li>
-              <li>True to size</li>
-              <li>Model is 6'0" wearing size M</li>
-            </ul>
           </div>
         </div>
       </div>
     </div>
-    </div>
   );
 };
 
-export default ProductDetails; 
+export default ProductDetails;

@@ -32,7 +32,7 @@ const page = () => {
             </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center lg:px-20 px-6 py-10'>
-            <div className='order-2 lg:order-1'>
+            <div className='max-lg:order-2 '>
                 <Image src={Volunteer} alt="volunteer" width={700} height={500} />
             </div>
             <div className='flex flex-col gap-4'>
@@ -73,7 +73,7 @@ const page = () => {
             </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center lg:px-20 px-6 py-10'>
-            <div className='order-2 lg:order-1'>
+            <div className='max-lg:order-2'>
                 <Image src={Start} alt="volunteer" width={700} height={500} />
             </div>
             <div className='flex flex-col gap-4'>
@@ -94,7 +94,7 @@ const page = () => {
                         )
                     })}
                 </div>
-                <button className='py-3 px-6 bg-button text-center w-fit text-white rounded-md max-lg:w-full'>Apply Now</button>
+                <Link href="/volunteer/apply" className='py-3 px-6 bg-button text-center w-fit text-white rounded-md max-lg:w-full'>Apply Now</Link>
             </div>
         </div>
         <div className="flex max-lg:h-[50vh] items-center justify-center w-full">
@@ -105,7 +105,7 @@ const page = () => {
               <p className='lg:w-[60%] text-center w-full'>Join our team of dedicated volunteers and be part of something bigger than yourself.</p>
               <div className='flex px-6 flex-col lg:flex-row items-center gap-4 lg:gap-8 max-lg:w-full'>
                 <Link href='/volunteer/apply' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md max-lg:w-full text-center">Apply Now</Link>
-                <button className="border border-white py-2 px-6 text-lg rounded-md max-lg:w-full">Contact Us</button>
+                <Link href="/contact" className="border border-white py-2 px-6 text-lg rounded-md max-lg:w-full text-center">Contact Us</Link>
               </div>
             </div>
         </div>

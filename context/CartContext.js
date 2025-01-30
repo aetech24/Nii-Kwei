@@ -1,63 +1,80 @@
 "use client"
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import {
+  initializeCart,
+  addToCart as addToCartUtil,
+  removeFromCart as removeFromCartUtil,
+  updateQuantity as updateQuantityUtil,
+  clearCart as clearCartUtil,
+  calculateTotal,
+  formatPrice
+} from '../utils/shoppingCart';
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product, quantity, size) => {
-    setCartItems(prev => {
-      const existingItem = prev.find(
-        item => item.id === product.id && (!size || item.size === size)
-      );
+  // Initialize cart from localStorage on mount
+  useEffect(() => {
+    const savedCart = initializeCart();
+    setCartItems(savedCart);
+  }, []);
 
-      if (existingItem) {
-        return prev.map(item =>
-          item.id === product.id && (!size || item.size === size)
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        );
-      }
-
-      return [...prev, { ...product, quantity, size, id: product.id }];
-    });
+  const addToCart = (product, quantity = 1, size) => {
+    const updatedCart = addToCartUtil({
+      ...product,
+      size,
+    }, quantity);
+    setCartItems(updatedCart);
   };
 
   const removeFromCart = (productId, size) => {
-    setCartItems(prev => 
-      prev.filter(item => !(item.id === productId && (!size || item.size === size)))
+    const itemToRemove = cartItems.find(
+      item => item.id === productId && (!size || item.size === size)
     );
+    if (itemToRemove) {
+      const updatedCart = removeFromCartUtil(itemToRemove.id);
+      setCartItems(updatedCart);
+    }
   };
 
   const updateQuantity = (productId, quantity, size) => {
-    setCartItems(prev =>
-      prev.map(item =>
-        item.id === productId && (!size || item.size === size)
-          ? { ...item, quantity }
-          : item
-      )
+    const itemToUpdate = cartItems.find(
+      item => item.id === productId && (!size || item.size === size)
     );
+    if (itemToUpdate) {
+      const updatedCart = updateQuantityUtil(itemToUpdate.id, quantity);
+      setCartItems(updatedCart);
+    }
   };
 
   const clearCart = () => {
-    setCartItems([]);
+    const emptyCart = clearCartUtil();
+    setCartItems(emptyCart);
   };
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return formatPrice(calculateTotal(cartItems));
+  };
+
+  const getItemCount = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
   return (
-    <CartContext.Provider value={{
-      cartItems,
-      addToCart,
-      removeFromCart,
-      updateQuantity,
-      clearCart,
-      getCartTotal,
-    }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        getCartTotal,
+        getItemCount,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
@@ -69,4 +86,4 @@ export function useCart() {
     throw new Error('useCart must be used within a CartProvider');
   }
   return context;
-} 
+}

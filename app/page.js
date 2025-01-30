@@ -29,12 +29,14 @@ const page = () => {
                 <p className='lg:w-[60%]'>Join us as we build a vibrant community rooted in faith, hope, and love. Explore our inspiring resources, including devotionals, apparel, and more, to support your spiritual journey</p>
               </div>
               <div className="flex max-md:w-full flex-col lg:flex-row items-center lg:gap-6 gap-3">
-                <Link href="/store" className='max-md:w-full'>
+                <Link href="/store" className='max-lg:w-full'>
                   <button className="bg-button w-full border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-600 transition duration-300">
                     Shop Now
                   </button>
                 </Link>
-                <button className="border max-md:w-full border-white py-2 px-6 text-lg rounded-md">Learn More</button>
+                <Link href='/about' className="max-lg:w-full">
+                  <button className="border w-full border-white py-2 px-6 text-lg rounded-md">Learn More</button>
+                </Link>
               </div>
             </div>
         </div>
@@ -49,7 +51,7 @@ const page = () => {
                 <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
               </h1>
               <p className='text-lg'>We are a dynamic ministry dedicated to spreading the gospel through worship, outreach, and community service. Our mission is to transform lives and make a lasting impact in our community and beyond.</p>
-              <button className="bg-button border border-button py-2 px-6 text-lg rounded-md text-white lg:w-fit">Read More</button>
+              <Link href='/about' className="bg-button border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-500 duration-300 ease-linear text-white text-center lg:w-fit">Read More</Link>
             </div>
           </div>
         </div>
@@ -84,7 +86,7 @@ const page = () => {
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white px-6 lg:px-20'>
               <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[40%] text-center leading-none'>Get Involved And A Difference</h1>
               <p className='lg:w-[60%] text-center max-lg:text-sm'>Join our community of passionate volunteers and help us transform lives through service and worship.</p>
-              <Link href='/volunteer' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md">Volunteer</Link>
+              <Link href='/volunteer' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md hover:bg-purple-500 duration-300 ease-linear">Volunteer</Link>
             </div>
         </div>
         <div className='flex flex-col gap-6 lg:items-center py-12 px-6 lg:px-16'>

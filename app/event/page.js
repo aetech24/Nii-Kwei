@@ -5,7 +5,7 @@ import Hero1 from '@/public/Event1.png';
 import Hero2 from '@/public/Event2.png';
 import Hero3 from '@/public/Event3.png';
 import Hero from '@/public/EventBackground.png';
-import Hero2 from '@/public/mobile-home.png';
+import Hero5 from '@/public/mobile-home.png';
 import Image from 'next/image';
 import Gallery from '../about/_component/gallery';
 import Link from 'next/link';
@@ -15,7 +15,7 @@ const page = () => {
     <div>
       <div className="h-[100vh] flex items-center justify-center w-full">
             <Image src={Hero} alt='hero' className="lg:object-cover max-lg:hidden object-fill bg-c bg-center relative w-full h-full" />
-            <Image src={Hero} alt='hero' className="lg:object-cover lg:hidden object-fill bg-c bg-center relative w-full h-full" />
+            <Image src={Hero5} alt='hero' className="lg:object-cover lg:hidden object-fill bg-c bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">
@@ -27,7 +27,7 @@ const page = () => {
                 <p className='lg:w-[60%]'>Access sermons, worship sessions, and memorable moments from Nii Kwei Ministry.</p>
               </div>
               <div className="flex max-md:w-full flex-col lg:flex-row items-center lg:gap-6 gap-3">
-                <Link href="/store" className='max-md:w-full'>
+                <Link href="" className='max-md:w-full'>
                   <button className="bg-button w-full border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-600 transition duration-300">
                     Watch Sermon
                   </button>

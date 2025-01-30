@@ -1,21 +1,6 @@
 "use client"
 
-import { useState } from "react"
-
-const Form4 = () => {
-  const [fullName, setFullName] = useState("")
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [email, setEmail] = useState("")
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log({
-      fullName,
-      phoneNumber,
-      email,
-    })
-  }
-
+const Form4 = ({ formData, onChange, errors }) => {
   return (
     <div className="w-full">
       <h1 className="text-2xl font-bold mb-4">References</h1>
@@ -25,7 +10,7 @@ const Form4 = () => {
         employers, teachers, family members, pastors, or community leaders who
         know you well.
       </p>
-      <form onSubmit={handleSubmit}>
+      <form>
         {/* Full Name */}
         <div className="mb-4">
           <label className="block font-medium mb-2" htmlFor="fullName">
@@ -34,11 +19,15 @@ const Form4 = () => {
           <input
             type="text"
             id="fullName"
+            name="fullName"
             placeholder="Reference name"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
+            value={formData.fullName || ''}
+            onChange={onChange}
             className="w-full border p-3 rounded-md"
           />
+          {errors?.fullName && (
+            <span className="text-red-500 text-sm block mt-1">{errors.fullName}</span>
+          )}
         </div>
 
         {/* Phone Number */}
@@ -49,11 +38,15 @@ const Form4 = () => {
           <input
             type="text"
             id="phoneNumber"
+            name="phoneNumber"
             placeholder="Reference phone number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            value={formData.phoneNumber || ''}
+            onChange={onChange}
             className="w-full border p-3 rounded-md"
           />
+          {errors?.phoneNumber && (
+            <span className="text-red-500 text-sm block mt-1">{errors.phoneNumber}</span>
+          )}
         </div>
 
         {/* Email Address */}
@@ -64,15 +57,19 @@ const Form4 = () => {
           <input
             type="email"
             id="email"
+            name="email"
             placeholder="Reference Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email || ''}
+            onChange={onChange}
             className="w-full border p-3 rounded-md"
           />
+          {errors?.email && (
+            <span className="text-red-500 text-sm block mt-1">{errors.email}</span>
+          )}
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Form4
+export default Form4;

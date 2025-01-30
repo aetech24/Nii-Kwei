@@ -23,7 +23,7 @@ const page = () => {
             <Volunteer />
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10 px-6 lg:px-20 py-16'>
-            <div className='order-2 lg:order-1'>
+            <div className='max-lg:order-2 '>
               <Image src={Expect} alt="expect" width={700} height={500} />
             </div>
             <div className='flex flex-col gap-4'>

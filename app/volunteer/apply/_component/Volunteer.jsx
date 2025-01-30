@@ -5,49 +5,80 @@ import Form2 from "./Form2";
 import Form3 from "./Form3";
 import Confirmation from "./Confirmation";
 import Form4 from "./Form4";
+import { validateForm, processFormData, submitVolunteerApplication } from "@/utils/volunteerFormUtils";
 
 const Volunteer = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    guestBirthDay: "",
+    guestName: "",
+    guestEmail: "",
     guestPhoneNumber: "",
+    guestBirthDay: "",
     guestCountry: "",
     guestProfilePicture: null,
     guestFrontIdCard: null,
     guestBackIdCard: null,
     guestGovernmentIdType: "",
     guestGovernmentIdNumber: "",
+    roles: {
+      worshipTeam: false,
+      outreachPrograms: false,
+      youthMinistry: false,
+      eventSupport: false,
+      administrativeRoles: false,
+    },
+    availability: "",
+    skills: "",
+    fullName: "",
+    phoneNumber: "",
+    email: "",
     userRole: "guest-admin",
     userType: "guest",
   });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [donationDetails, setDonationDetails] = useState({
-    amount: 0,
-    donor: "",
-    transactionId: "",
-    date: new Date().toLocaleDateString(),
-  });
 
-  const handleNext = () => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleNext = async () => {
+    const validation = validateForm(formData, currentStep);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
     if (currentStep < 4) {
       setCurrentStep((prev) => prev + 1);
+      setErrors({});
     } else {
-      // Generate a random transaction ID
-      const transactionId = `DON-${Math.random().toString().slice(2, 12)}`;
-      setDonationDetails({
-        amount: 100, // Replace with actual amount from form
-        donor: formData.guestName || "Anonymous", // Use form data
-        transactionId,
-        date: new Date().toLocaleDateString(),
-      });
-      setShowConfirmation(true);
+      setIsSubmitting(true);
+      try {
+        const processedData = processFormData(formData);
+        const result = await submitVolunteerApplication(processedData);
+        if (result.success) {
+          setShowConfirmation(true);
+        }
+      } catch (error) {
+        console.error('Error submitting application:', error);
+        setErrors({ submit: 'Failed to submit application. Please try again.' });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
   const handleBack = () => {
     if (currentStep > 1) {
       setCurrentStep((prev) => prev - 1);
+      setErrors({});
     }
   };
 
@@ -56,34 +87,64 @@ const Volunteer = () => {
       <div className="flex flex-col gap-4 text-3xl">Personal Details</div>
       <div className="flex flex-col gap-2">
         <label>Name</label>
-        <input type="text" name="" value="" placeholder="Tom Kin" className="border rounded-md p-2" />
+        <input
+          type="text"
+          name="guestName"
+          value={formData.guestName}
+          onChange={handleInputChange}
+          placeholder="Tom Kin"
+          className="border rounded-md p-2"
+        />
+        {errors?.guestName && (
+          <span className="text-red-500 text-sm">{errors.guestName}</span>
+        )}
       </div>
       <div className="flex flex-col gap-2">
         <label>Email Address</label>
-        <input type="email" name="" value="" placeholder="Tom Kin" className="border rounded-md p-2" />
+        <input
+          type="email"
+          name="guestEmail"
+          value={formData.guestEmail}
+          onChange={handleInputChange}
+          placeholder="email@example.com"
+          className="border rounded-md p-2"
+        />
+        {errors?.guestEmail && (
+          <span className="text-red-500 text-sm">{errors.guestEmail}</span>
+        )}
       </div>
       <div className="flex flex-col gap-2">
         <label>Phone Number</label>
-        <input type="text" name="" value="" placeholder="Tom Kin" className="border rounded-md p-2" />
+        <input
+          type="text"
+          name="guestPhoneNumber"
+          value={formData.guestPhoneNumber}
+          onChange={handleInputChange}
+          placeholder="+1234567890"
+          className="border rounded-md p-2"
+        />
+        {errors?.guestPhoneNumber && (
+          <span className="text-red-500 text-sm">{errors.guestPhoneNumber}</span>
+        )}
       </div>
     </div>
   );
 
   const renderStep2 = () => (
     <div className="">
-      <Form2 />
+      <Form2 formData={formData} onChange={handleInputChange} errors={errors} />
     </div>
   );
 
   const renderStep3 = () => (
     <div className="">
-      <Form3 />
+      <Form3 formData={formData} onChange={handleInputChange} errors={errors} />
     </div>
   );
 
   const renderStep4 = () => (
     <div className="">
-      <Form4 />
+      <Form4 formData={formData} onChange={handleInputChange} errors={errors} />
     </div>
   );
 
@@ -117,18 +178,29 @@ const Volunteer = () => {
             {currentStep === 3 && renderStep3()}
             {currentStep === 4 && renderStep4()}
 
+            {errors.submit && (
+              <div className="mt-4 text-red-500 text-center">{errors.submit}</div>
+            )}
+
             <div className="flex justify-between mt-8">
               <button
                 onClick={handleBack}
                 className={`px-6 py-2 rounded-md ${
                   currentStep === 1 ? "bg-gray-300 bg-opacity-0 text-transparent" : "text-black"
                 }`}
-                disabled={currentStep === 1}
+                disabled={currentStep === 1 || isSubmitting}
               >
                 Back
               </button>
-              <button onClick={handleNext} className="px-10 py-2 bg-button text-white rounded-md">
-                {currentStep === 4 ? "Submit Application" : "Continue"}
+              <button
+                onClick={handleNext}
+                className="px-10 py-2 bg-button text-white rounded-md"
+                disabled={isSubmitting}
+              >
+                {currentStep === 4 
+                  ? (isSubmitting ? "Submitting..." : "Submit Application")
+                  : "Continue"
+                }
               </button>
             </div>
           </div>

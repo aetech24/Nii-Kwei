@@ -1,33 +1,22 @@
 "use client"
 
-import { useState } from "react"
-
-const Form2 = () => {
-  const [roles, setRoles] = useState({
-    worshipTeam: false,
-    outreachPrograms: false,
-    youthMinistry: false,
-    eventSupport: false,
-    administrativeRoles: false,
-  })
-
-  const [availability, setAvailability] = useState("")
-
+const Form2 = ({ formData, onChange, errors }) => {
   const handleRoleChange = (role) => {
-    setRoles((prev) => ({ ...prev, [role]: !prev[role] }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const selectedRoles = Object.keys(roles).filter((role) => roles[role])
-    console.log("Selected Roles:", selectedRoles)
-    console.log("Availability:", availability)
-  }
+    onChange({
+      target: {
+        name: 'roles',
+        value: {
+          ...(formData.roles || {}),
+          [role]: !(formData.roles?.[role])
+        }
+      }
+    });
+  };
 
   return (
     <div className="w-full">
       <h1 className="text-2xl font-bold mb-6">Volunteer interest</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         {/* Roles Section */}
         <div className="mb-6">
           <h2 className="font-medium mb-3">Select Preferred Roles</h2>
@@ -36,7 +25,7 @@ const Form2 = () => {
               <input
                 id="worshipTeam"
                 type="checkbox"
-                checked={roles.worshipTeam}
+                checked={formData.roles?.worshipTeam || false}
                 onChange={() => handleRoleChange("worshipTeam")}
                 className="mr-3"
               />
@@ -46,7 +35,7 @@ const Form2 = () => {
               <input
                 id="outreachPrograms"
                 type="checkbox"
-                checked={roles.outreachPrograms}
+                checked={formData.roles?.outreachPrograms || false}
                 onChange={() => handleRoleChange("outreachPrograms")}
                 className="mr-3"
               />
@@ -56,7 +45,7 @@ const Form2 = () => {
               <input
                 id="youthMinistry"
                 type="checkbox"
-                checked={roles.youthMinistry}
+                checked={formData.roles?.youthMinistry || false}
                 onChange={() => handleRoleChange("youthMinistry")}
                 className="mr-3"
               />
@@ -66,7 +55,7 @@ const Form2 = () => {
               <input
                 id="eventSupport"
                 type="checkbox"
-                checked={roles.eventSupport}
+                checked={formData.roles?.eventSupport || false}
                 onChange={() => handleRoleChange("eventSupport")}
                 className="mr-3"
               />
@@ -76,29 +65,36 @@ const Form2 = () => {
               <input
                 id="administrativeRoles"
                 type="checkbox"
-                checked={roles.administrativeRoles}
+                checked={formData.roles?.administrativeRoles || false}
                 onChange={() => handleRoleChange("administrativeRoles")}
                 className="mr-3"
               />
               <label htmlFor="administrativeRoles">Administrative Roles</label>
             </div>
           </div>
+          {errors?.roles && (
+            <span className="text-red-500 text-sm block mt-2">{errors.roles}</span>
+          )}
         </div>
 
         {/* Availability Section */}
         <div className="mb-6">
           <h2 className="font-medium mb-3">Availability</h2>
           <textarea
+            name="availability"
             placeholder="Please list the days and times you're available to volunteer"
-            value={availability}
-            onChange={(e) => setAvailability(e.target.value)}
+            value={formData.availability || ''}
+            onChange={onChange}
             className="w-full border p-3 rounded-md"
             rows={4}
           />
+          {errors?.availability && (
+            <span className="text-red-500 text-sm block mt-2">{errors.availability}</span>
+          )}
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Form2
+export default Form2;

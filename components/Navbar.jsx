@@ -1,18 +1,19 @@
 "use client";
 
+import { useCart } from '@/context/CartContext';
 import logo from '@/public/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from "next/navigation";
 import { useState } from 'react';
 import { AiOutlineClose } from "react-icons/ai";
 import { BsArrowUpRight } from "react-icons/bs";
 import { CgMenu } from "react-icons/cg";
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
-import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-    const [cartCount] = useState(0); // Update cart count dynamically as per your state
+    const { getItemCount, cartItems } = useCart();
     const pathname = usePathname(); // Get the current route
 
     const toggleNavbar = () => {
@@ -46,35 +47,33 @@ const Navbar = () => {
                         </div>
                         <Link href="/cart" className="relative">
                             <FaShoppingCart className="text-xl" />
-                            {cartCount >= 0 && (
+                            {getItemCount() > 0 && (
                                 <span className="absolute -top-2 -right-2 bg-purple-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                                    {cartCount}
+                                    {getItemCount()}
                                 </span>
                             )}
                         </Link>
-                        <div className="lg:hidden md:flex md:flex-col justify-end text-white">
-                            <button onClick={toggleNavbar}>
-                                {mobileDrawerOpen ? (
-                                    <AiOutlineClose className="text-2xl  font-bold" />
-                                ) : (
-                                    <CgMenu className="text-2xl font-bold" />
-                                )}
-                            </button>
-                        </div>
+                        <button
+                            onClick={toggleNavbar}
+                            className="lg:hidden text-2xl"
+                        >
+                            {mobileDrawerOpen ? <AiOutlineClose /> : <CgMenu />}
+                        </button>
                     </div>
                 </div>
+
+                {/* Mobile Menu */}
                 {mobileDrawerOpen && (
-                    <div className="fixed right-0 z-20 w-full p-12 flex flex-col justify-center items-center lg:hidden backdrop-blur-lg bg-black bg-opacity-50 text-white">
-                        <ul className="font-semibold text-lg">
+                    <div className="lg:hidden absolute top-full left-0 right-0 bg-black bg-opacity-20 backdrop-blur-lg py-4">
+                        <ul className="flex flex-col gap-4 text-white px-6">
                             {["/", "/about", "/contact", "/donation", "/store", "/event"].map((link, index) => (
                                 <li
                                     key={index}
-                                    onClick={toggleNavbar}
-                                    className={`hover:text-purple duration-300 ease-in py-3 text-center ${
-                                        pathname === link ? "text-purple underline" : ""
+                                    className={`hover:text-purple-500 duration-300 ease-in text-center text-lg py-2 ${
+                                        pathname === link ? "text-purple-500 underline" : ""
                                     }`}
                                 >
-                                    <Link href={link}>
+                                    <Link href={link} onClick={toggleNavbar}>
                                         {link === "/" ? "Home" : link.replace("/", "").replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase())}
                                     </Link>
                                 </li>
