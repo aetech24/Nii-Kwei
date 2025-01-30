@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { FaCheckCircle, FaTruck, FaBox } from "react-icons/fa"
 import { FiPackage, FiAlertCircle } from "react-icons/fi"
@@ -10,7 +10,7 @@ import Image from 'next/image'
 import Link from "next/link"
 import { toast } from "react-hot-toast"
 
-const TrackOrderPage = () => {
+const TrackOrderPageContent = () => {
   const searchParams = useSearchParams()
   const initialOrderNumber = searchParams.get("order") || ""
   const [orderNumber, setOrderNumber] = useState(initialOrderNumber)
@@ -266,4 +266,10 @@ const TrackOrderPage = () => {
   )
 }
 
-export default TrackOrderPage
+const TrackOrderPage = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <TrackOrderPageContent />
+  </Suspense>
+)
+
+export default TrackOrderPage;
