@@ -55,9 +55,7 @@ const page = () => {
               <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
             </h1>
               <ul>
-                <li className="lg:text-lg">Our vision to create a world transformed by faith, love,
-                     and service, where every individual experiences the life-changing power of God’s 
-                     grace and becomes a beacon of hope in their community
+                <li className="lg:text-lg">Nii Kwei Ministries is a dynamic, spirit-led ministry focused on empowering individuals, cultivating a culture of worship, and making a lasting impact for Christ. Rooted in the teachings of Jesus Christ, we provide spiritual growth, mentorship, and transformative experiences through worship, community engagement, and service.
                 </li>
               </ul>
             </div>
@@ -69,10 +67,7 @@ const page = () => {
                 <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
               </h1>
               <ul>
-                <li className="lg:text-lg">At Nii Kwei Ministries, we empower individuals through dynamic worship,
-                     impactful outreach, and intentional community building, inspiring spiritual growth and equipping
-                      believers to serve with compassion and excellence</li>
-                
+                <li className="lg:text-lg">At Nii Kwei Ministries, our mission is to transform lives and build a Christ-centered legacy through worship, discipleship, and outreach. We are committed to equipping believers, raising leaders, and advancing God’s kingdom through faith-driven initiatives.</li>
               </ul>
             </div>
             <Image src={Singer2} alt="Singer Nii Kwei" width={700} height={500} />
