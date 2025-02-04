@@ -50,19 +50,10 @@ const page = () => {
         <div className="grid md:grid-cols-3 gap-6 mt-10">
           {/* Card 1 */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="relative">
-              <Image
-                src={Hero1}
-                alt="The Power of Faith"
-                className="w-full h-48 object-cover"
-              />
-              <button className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white rounded-full w-12 h-12 m-auto">
-                ▶
-              </button>
-              <span className="absolute bottom-2 right-2 bg-gray-900 text-white text-sm px-2 py-1 rounded">
-                1hr 20mins
-              </span>
-            </div>
+            <video controls width="600" className="rounded-t-xl shadow-lg">
+              <source src="/videos/video1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <div className="p-4">
               <h3 className="text-lg font-semibold">The Power of Faith</h3>
               <p className="text-gray-600">Sermon</p>
@@ -71,19 +62,10 @@ const page = () => {
 
           {/* Card 2 */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="relative">
-              <Image
-                src={Hero2}
-                alt="Living With Purpose"
-                className="w-full h-48 object-cover"
-              />
-              <button className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white rounded-full w-12 h-12 m-auto">
-                ▶
-              </button>
-              <span className="absolute bottom-2 right-2 bg-gray-900 text-white text-sm px-2 py-1 rounded">
-                1hr 20mins
-              </span>
-            </div>
+            <video controls width="600" className="rounded-t-xl shadow-lg">
+              <source src="/videos/video2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <div className="p-4">
               <h3 className="text-lg font-semibold">Living With Purpose</h3>
               <p className="text-gray-600">Sermon</p>
@@ -92,19 +74,10 @@ const page = () => {
 
           {/* Card 3 */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="relative">
-              <Image
-                src={Hero3}
-                alt="Praise and Worship Night"
-                className="w-full h-48 object-cover"
-              />
-              <button className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white rounded-full w-12 h-12 m-auto">
-                ▶
-              </button>
-              <span className="absolute bottom-2 right-2 bg-gray-900 text-white text-sm px-2 py-1 rounded">
-                1hr 20mins
-              </span>
-            </div>
+            <video controls width="600" className="rounded-xl shadow-lg">
+              <source src="/videos/video3.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <div className="p-4">
               <h3 className="text-lg font-semibold">
                 Praise and Worship Night
