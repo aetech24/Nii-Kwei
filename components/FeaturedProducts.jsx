@@ -32,14 +32,14 @@ const FeaturedProducts = () => {
 
   return (
     <div className='py-10'>
-      <h2 className="text-3xl font-semibold relative pb-1 mb-6">
+      <h2 className="text-3xl font-semibold relative pb-1 mb-6" data-aos="fade-up">
         Featured Products
         <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
       </h2>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
         {featuredProducts.map((item, id) => (
           <Link href={`/store/${id}`} key={id}>
-            <div className='flex flex-col gap-2 shadow-xl pb-4 rounded-md transition duration-300 hover:shadow-2xl'>
+            <div className='flex flex-col gap-2 shadow-xl pb-4 rounded-md transition duration-300 hover:shadow-2xl' data-aos="zoom-in">
               <Image src={item.image} alt={item.name} className='rounded-t-md'/>
               <div className='flex flex-col gap-1 px-4'>
                 <p>{item.category}</p>

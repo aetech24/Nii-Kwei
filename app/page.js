@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect } from 'react'
 import Hero from '@/public/Home-hero.png'
 import Hero2 from '@/public/mobile-home.png'
 import About from '@/public/about.png'
@@ -11,8 +13,17 @@ import StoreCard from './store/_component/StoreCard'
 import SermonCard from '@/components/SermonCard'
 import FeaturedProducts from '@/components/FeaturedProducts'
 import Link from 'next/link'
+import AOS from 'aos'
+import "aos/dist/aos.css";
 
 const page = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-linear",
+      once: false,
+    });
+  }, []);
   return (
     <div>
       <div className="h-[100vh] flex items-center justify-center w-full">
@@ -21,14 +32,18 @@ const page = () => {
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">
-                <p className="lg:text-lg relative pb-1">
+                <p className="lg:text-lg relative pb-1" data-aos="slide-right" data-aos-delay="100">
                   Welcome to Nii Kwei Ministries
                   <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
                 </p>
-                <h1 className='text-4xl lg:text-5xl font-semibold lg:w-[70%] leading-tight'>Transforming Lives Through Worship and Service.</h1>
-                <p className='lg:w-[60%]'>Join us as we build a vibrant community rooted in faith, hope, and love. Explore our inspiring resources, including devotionals, apparel, and more, to support your spiritual journey</p>
+                <h1 className='text-4xl lg:text-5xl font-semibold lg:w-[70%] leading-tight' data-aos="slide-right" data-aos-delay="300">
+                  Transforming Lives Through Worship and Service.
+                </h1>
+                <p className='lg:w-[60%]' data-aos="slide-right" data-aos-delay="500">
+                  Join us as we build a vibrant community rooted in faith, hope, and love. Explore our inspiring resources, including devotionals, apparel, and more, to support your spiritual journey.
+                </p>
               </div>
-              <div className="flex max-md:w-full flex-col lg:flex-row items-center lg:gap-6 gap-3">
+              <div className="flex max-md:w-full flex-col lg:flex-row items-center lg:gap-6 gap-3" data-aos="zoom-out">
                 <Link href="/store" className='max-lg:w-full'>
                   <button className="bg-button w-full border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-600 transition duration-300">
                     Shop Now
@@ -41,10 +56,10 @@ const page = () => {
             </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16 lg:px-20 px-6 py-10">
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1" data-aos="fade-right">
             <Image src={About} alt="about" />
           </div>
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2" data-aos="fade-left">
             <div className="flex flex-col gap-4">
               <h1 className="text-3xl font-semibold relative pb-1">
                 About Nii Kwei Ministries
@@ -56,11 +71,11 @@ const page = () => {
           </div>
         </div>
         <div className='flex flex-col lg:items-center py-6 px-6'>
-          <h1 className="text-3xl font-semibold relative pb-1">
+          <h1 className="text-3xl font-semibold relative pb-1" data-aos="fade-up">
             Upcoming Events
             <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
           </h1>
-          <EventCard />
+          <EventCard/>
           <Link href='/event'>
             <button className='text-button max-lg:text-center max-lg:w-full'>View All Events {">"}</button>
           </Link>
@@ -72,7 +87,7 @@ const page = () => {
         <div className='relative'>
           <Image src={Deco} alt="deco" className='absolute top-0 left-0 lg:w-48 w-28'/>
           <div className='flex flex-col gap-4 lg:items-center w-full h-full py-24 px-6 lg:px-16'>
-            <h1 className="text-3xl font-semibold relative pb-1">
+            <h1 className="text-3xl font-semibold relative pb-1" data-aos="fade-up">
               Our Videos
               <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
             </h1>
@@ -84,13 +99,13 @@ const page = () => {
             <Image src={Banner2} alt='banner' className="bg-cover lg:hidden bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white px-6 lg:px-20'>
-              <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[40%] text-center leading-none'>Get Involved And Make A Difference</h1>
-              <p className='lg:w-[60%] text-center max-lg:text-sm'>Join our community of passionate volunteers and help us transform lives through service and worship.</p>
-              <Link href='/volunteer' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md hover:bg-purple-500 duration-300 ease-linear">Volunteer</Link>
+              <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[40%] text-center leading-none' data-aos="zoom-in">Get Involved And Make A Difference</h1>
+              <p className='lg:w-[60%] text-center max-lg:text-sm' data-aos="zoom-in">Join our community of passionate volunteers and help us transform lives through service and worship.</p>
+              <Link href='/volunteer' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md hover:bg-purple-500 duration-300 ease-linear" data-aos="zoom-in">Volunteer</Link>
             </div>
         </div>
         <div className='flex flex-col gap-6 lg:items-center py-12 px-6 lg:px-16'>
-          <h1 className="text-3xl font-semibold relative pb-1">
+          <h1 className="text-3xl font-semibold relative pb-1" data-aos="fade-up">
             Where We Are Located
             <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
           </h1>

@@ -7,7 +7,7 @@ const SermonCard = () => {
     <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 py-4 w-full lg:h-[50vh]'>
         {videos.map((item, id) => {
             return(
-                <div key={id} className='shadow-lg rounded-md max-lg:h-[40vh]'>
+                <div key={id} className='shadow-lg rounded-md max-lg:h-[40vh]' data-aos="zoom-in">
                     <iframe
                         src={item.link}
                         title="YouTube video"
