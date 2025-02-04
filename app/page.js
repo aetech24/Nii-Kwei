@@ -84,7 +84,7 @@ const page = () => {
             <Image src={Banner2} alt='banner' className="bg-cover lg:hidden bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white px-6 lg:px-20'>
-              <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[40%] text-center leading-none'>Get Involved And A Difference</h1>
+              <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[40%] text-center leading-none'>Get Involved And Make A Difference</h1>
               <p className='lg:w-[60%] text-center max-lg:text-sm'>Join our community of passionate volunteers and help us transform lives through service and worship.</p>
               <Link href='/volunteer' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md hover:bg-purple-500 duration-300 ease-linear">Volunteer</Link>
             </div>
