@@ -13,7 +13,7 @@ import Link from 'next/link';
 const page = () => {
   return (
     <div>
-      <div className="lg:h-[100vh] h-[80vh] flex items-center justify-center w-full">
+      <div className="lg:h-[95vh] h-[80vh] flex items-center justify-center w-full">
             {/* <Image src={Hero} alt='hero' className="lg:object-cover max-lg:hidden object-fill bg-c bg-center relative w-full h-full" />
             <Image src={Hero5} alt='hero' className="lg:object-cover lg:hidden object-fill bg-c bg-center relative w-full h-full" /> */}
             <video 
@@ -39,7 +39,7 @@ const page = () => {
               <div className="flex max-md:w-full flex-col lg:flex-row items-center lg:gap-6 gap-3">
                 <Link href="" className='max-md:w-full'>
                   <button className="bg-button w-full border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-600 transition duration-300">
-                    Watch Sermon
+                    Visit Our Channel
                   </button>
                 </Link>
                 <button className="border max-md:w-full border-white py-2 px-6 text-lg rounded-md">View Gallery</button>
