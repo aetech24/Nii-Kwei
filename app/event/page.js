@@ -14,8 +14,18 @@ const page = () => {
   return (
     <div>
       <div className="h-[100vh] flex items-center justify-center w-full">
-            <Image src={Hero} alt='hero' className="lg:object-cover max-lg:hidden object-fill bg-c bg-center relative w-full h-full" />
-            <Image src={Hero5} alt='hero' className="lg:object-cover lg:hidden object-fill bg-c bg-center relative w-full h-full" />
+            {/* <Image src={Hero} alt='hero' className="lg:object-cover max-lg:hidden object-fill bg-c bg-center relative w-full h-full" />
+            <Image src={Hero5} alt='hero' className="lg:object-cover lg:hidden object-fill bg-c bg-center relative w-full h-full" /> */}
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              width="600" 
+              className="lg:object-cover max-lg:hidden object-fill bg-cover bg-center relative w-full h-full">
+              <source src="/videos/video2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <div className='bg-black absolute w-full bg-opacity-20'></div>
             <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-6 lg:px-20'>
               <div className="w-full flex flex-col gap-5 justify-center text-white">
