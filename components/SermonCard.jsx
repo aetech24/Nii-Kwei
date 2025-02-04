@@ -4,10 +4,10 @@ import React from 'react'
 
 const SermonCard = () => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 py-4 w-full h-[50vh]'>
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 py-4 w-full lg:h-[50vh]'>
         {videos.map((item, id) => {
             return(
-                <div key={id} className='shadow-lg rounded-md'>
+                <div key={id} className='shadow-lg rounded-md max-lg:h-[40vh]'>
                     <iframe
                         src={item.link}
                         title="YouTube video"
