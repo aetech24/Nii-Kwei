@@ -72,7 +72,7 @@ const page = () => {
                 <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
               </h1>
               <ul>
-                <li className="lg:text-lg">At Nii Kwei Ministries, our mission is to transform lives and build a Christ-centered legacy through worship, discipleship, and outreach. We are committed to equipping believers, raising leaders, and advancing God’s kingdom through faith-driven initiatives.</li>
+                <li className="max-lg:text-sm">At Nii Kwei Ministries, our mission is to transform lives and build a Christ-centered legacy through worship, discipleship, and outreach. We are committed to equipping believers, raising leaders, and advancing God’s kingdom through faith-driven initiatives.</li>
               </ul>
             </div>
           </div>
@@ -86,7 +86,7 @@ const page = () => {
               <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
             </h1>
               <ul>
-                <li className="lg:text-lg">We engage in worship experiences, outreach efforts, and community impact projects designed to inspire, equip, and transform. Through our various initiatives, we aim to: <br/>
+                <li className="max-lg:text-sm">We engage in worship experiences, outreach efforts, and community impact projects designed to inspire, equip, and transform. Through our various initiatives, we aim to: <br/>
                 <ul className='flex flex-col gap-1 py-4'>
                   {Do.map((item, id) => {
                     return(
@@ -109,7 +109,7 @@ const page = () => {
                 <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
               </h1>
               <ul>
-                <li className="lg:text-lg">Nii Kwei Community Touch, the outreach arm of the ministries undertakes programs designed to impact impoverished youth in deprived communities. We believe in touching lives tangibly as our Lord and Savior did, showing compassion to the needy.</li>
+                <li className="max-lg:text-sm">Nii Kwei Community Touch, the outreach arm of the ministries undertakes programs designed to impact impoverished youth in deprived communities. We believe in touching lives tangibly as our Lord and Savior did, showing compassion to the needy.</li>
               </ul>
             </div>
           </div>
