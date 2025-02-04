@@ -22,7 +22,7 @@ const page = () => {
               muted 
               playsInline
               width="600" 
-              className="lg:object-cover max-lg:hidden object-fill bg-cover bg-center relative w-full h-full">
+              className="lg:object-cover object-fill bg-cover bg-center relative w-full h-full">
               <source src="/videos/video2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
