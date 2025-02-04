@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Logo from "@/public/logo.png"
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaTwitter, FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
 
 const Footer = () => {
@@ -50,11 +50,21 @@ const Footer = () => {
           </div>
         </div>
         <div className='flex items-center gap-2 text-2xl'>
-          <FaFacebook />
-          <FaInstagram />
-          <FaTwitter />
-          <FaLinkedin />
-          <FaYoutube />
+          <a href="https://www.facebook.com/freyblanks?mibextid=rS40aB7S9Ucbxw6v" target="_blank" rel="noopener noreferrer">
+            <FaFacebook />
+          </a>
+          <a href="https://www.instagram.com/niikweiworld?igsh=YzljYTk1ODg3Zg==" target="_blank" rel="noopener noreferrer">
+            <FaInstagram />
+          </a>
+          <a href="https://www.tiktok.com/t/ZT2M4dfXa/" target="_blank" rel="noopener noreferrer">
+            <FaTiktok />
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="https://youtube.com/@niikweimusic?si=nRaE4IrDUBmcnmXF" target="_blank" rel="noopener noreferrer">
+            <FaYoutube />
+          </a>
         </div>
       </div>
     </div>

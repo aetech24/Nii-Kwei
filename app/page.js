@@ -71,7 +71,7 @@ const page = () => {
         </div>
         <div className='relative'>
           <Image src={Deco} alt="deco" className='absolute top-0 left-0 lg:w-48 w-28'/>
-          <div className='flex flex-col gap-4 lg:items-center py-24 px-6 lg:px-16'>
+          <div className='flex flex-col gap-4 lg:items-center w-full py-24 px-6 lg:px-16'>
             <h1 className="text-3xl font-semibold relative pb-1">
               Recent Sermons
               <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>

@@ -51,7 +51,7 @@ const page = () => {
           {/* Card 1 */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <video controls width="600" className="rounded-t-xl shadow-lg">
-              <source src="/videos/video1.mp4" type="video/mp4" />
+              <source src="/videos/video2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="p-4">
