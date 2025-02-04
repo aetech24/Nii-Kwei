@@ -1,9 +1,9 @@
 import Book from '@/public/BookIcon.png';
 import Download from '@/public/Download.png';
 import Music from '@/public/MusicIcon.png';
-import Hero1 from '@/public/Event1.png';
-import Hero2 from '@/public/Event2.png';
-import Hero3 from '@/public/Event3.png';
+import Flyer1 from '@/public/events/flyer1.jpg'
+import Flyer2 from '@/public/events/flyer2.jpg'
+import Flyer3 from '@/public/events/flyer3.jpg'
 import Hero from '@/public/EventBackground.png';
 import Hero5 from '@/public/mobile-home.png';
 import Image from 'next/image';
@@ -92,6 +92,17 @@ const page = () => {
           <button className="bg-button text-white px-6 py-2 rounded-lg hover:bg-teal-600 max-lg:w-full">
             View All
           </button>
+        </div>
+      </div>
+      <div className='pt-32 w-full'>
+        <div className='flex flex-col items-center text-3xl md:text-4xl font-semibold'>
+          <h1 data-aos="fade-down" data-aos-duration="2000" className='text-purple'>Join Our Upcoming</h1>
+          <h1 data-aos="fade-down" data-aos-duration="1000" className='text-orange'>Events</h1>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-5 py-10 mx-8 md:mx-16 place-items-center'>
+          <Image data-aos="flip-right" data-aos-duration="1500" src={Flyer1} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
+          <Image data-aos="flip-left" data-aos-duration="1500" src={Flyer2} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
+          <Image data-aos="flip-left" data-aos-duration="1500" src={Flyer3} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
         </div>
       </div>
 
