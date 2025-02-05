@@ -64,7 +64,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {mobileDrawerOpen && (
-                    <div className="lg:hidden absolute top-full left-0 right-0 bg-black bg-opacity-20 backdrop-blur-lg py-4">
+                    <div className="lg:hidden absolute top-full left-0 right-0 bg-black bg-opacity-20 backdrop-blur-lg py-4 w-full">
                         <ul className="flex flex-col gap-4 text-white px-6">
                             {["/", "/about", "/contact", "/donation", "/store", "/event"].map((link, index) => (
                                 <li
