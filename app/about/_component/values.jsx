@@ -60,13 +60,13 @@ const coreValues = [
 const CoreValues = () => {
   return (
     <div className="lg:px-20 px-6 lg:text-center my-16">
-      <h2 className="text-3xl font-bold mb-8 relative pb-1">
+      <h2 className="text-3xl font-bold mb-8 relative pb-1" data-aos="fade-up">
         Our Core Values
         <span className="absolute left-0 lg:left-1/2 -bottom-1 w-[10%] h-1 rounded-full bg-violet-500"></span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {coreValues.map((value) => (
-          <div key={value.title} className="bg-white rounded-lg shadow-lg p-6">
+          <div key={value.title} className="bg-white rounded-lg shadow-lg p-6" data-aos="zoom-in">
             <div className="text-left">
               {value.icon}
               <h3 className="text-xl font-semibold mb-2">{value.title}</h3>

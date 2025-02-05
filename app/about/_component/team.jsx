@@ -20,7 +20,7 @@ const TeamSection = () => {
 
   return (
     <div className="lg:px-20 px-6 lg:text-center my-16">
-      <h2 className="text-3xl font-bold mb-8 relative pb-1">
+      <h2 className="text-3xl font-bold mb-8 relative pb-1" data-aos="fade-up">
         Meet Our Team
         <span className="absolute left-0 lg:left-1/2 bottom-0 w-[10%] h-1 rounded-full bg-violet-500"></span>
       </h2>
@@ -29,6 +29,7 @@ const TeamSection = () => {
           <div
             key={member.name}
             className="bg-white rounded-lg lg:shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105"
+            data-aos="zoom-in"
           >
             <Image
               src={member.imageUrl}

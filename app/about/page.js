@@ -1,3 +1,6 @@
+"use client"
+
+import React, {useEffect} from 'react'
 import Hero from '@/public/Background.png';
 import Hero2 from '@/public/mobile-about.png';
 import Outreach from '@/public/outreach.png';
@@ -9,8 +12,8 @@ import Banner2 from '@/public/mobile-banner.png'
 // import Founder2 from '@/public/Image2.png';
 // import Founder3 from '@/public/Image3.png';
 import Image from 'next/image';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Gallery from './_component/gallery';
 import TeamSection from './_component/team';
 import Values from './_component/values';
@@ -31,6 +34,14 @@ const worship = [
 ]
 
 const page = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-linear",
+      once: false,
+    });
+  }, []);
+
   return (
     <div>
       <div className="md:h-[60vh] h-[50vh] flex items-center justify-center w-full relative font-sans">
@@ -47,7 +58,7 @@ const page = () => {
         <div className="absolute inset-0 flex items-center justify-start px-6 lg:px-20">
           <div
             className="text-white flex flex-col items-start"
-            data-aos="fade-up"
+            data-aos="fade-right"
           >
             <h1 className="text-4xl lg:text-5xl font-bold relative pb-1">
               About Us
@@ -64,9 +75,9 @@ const page = () => {
 
       <div className="lg:py-10 flex flex-col gap-10 lg:px-20 px-6">
         <div className='py-10 flex flex-col gap-10'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10 mt-10 lg:mt-20' data-aos="fade-right">
-          <Image src={Singer2} alt="Singer Nii Kwei" width={700} height={500} className="max-lg:order-2" />
-            <div className="flex flex-col gap-3">
+        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10 mt-10 lg:mt-20'>
+          <Image src={Singer2} alt="Singer Nii Kwei" width={700} height={500} className="max-lg:order-2" data-aos="fade-right"/>
+            <div className="flex flex-col gap-3" data-aos="fade-left">
               <h1 className="text-2xl lg:text-3xl font-semibold relative pb-1">
                 Our Mission
                 <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
@@ -76,11 +87,11 @@ const page = () => {
               </ul>
             </div>
           </div>
-          <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10' data-aos="fade-right">
-            <div className="lg:order-2">
+          <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10' >
+            <div className="lg:order-2" data-aos="fade-right">
               <Image src={Singer1} alt="Founder1" width={700} height={500} />
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3" data-aos="fade-left">
             <h1 className="text-2xl lg:text-3xl font-semibold relative pb-1">
               What We Do
               <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
@@ -101,9 +112,9 @@ const page = () => {
               </ul>
             </div>
           </div>
-          <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10 mt-10 lg:mt-20' data-aos="fade-right">
-          <Image src={Outreach} alt="Singer Nii Kwei" width={700} height={500} className="max-lg:order-2" />
-            <div className="flex flex-col gap-3">
+          <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10 mt-10 lg:mt-20'>
+          <Image src={Outreach} alt="Singer Nii Kwei" width={700} height={500} className="max-lg:order-2" data-aos="fade-right" />
+            <div className="flex flex-col gap-3" data-aos="fade-left">
               <h1 className="text-2xl lg:text-3xl font-semibold relative pb-1">
                 Outreach Mission
                 <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
@@ -113,11 +124,11 @@ const page = () => {
               </ul>
             </div>
           </div>
-          <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10' data-aos="fade-right">
-            <div className="lg:order-2">
+          <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
+            <div className="lg:order-2" data-aos="fade-right">
               <Image src={Worship} alt="Founder1" width={700} height={500} />
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3" data-aos="fade-left">
             <h1 className="text-2xl lg:text-3xl font-semibold relative pb-1">
               Worship & Music Ministry
               <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
@@ -156,7 +167,7 @@ const page = () => {
           <Image src={Banner} alt='banner' className="bg-cover max-lg:hidden bg-center relative w-full h-full" />
           <Image src={Banner2} alt='banner' className="bg-cover lg:hidden bg-center relative w-full h-full" />
           <div className='bg-black absolute w-full bg-opacity-20'></div>
-          <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white px-6 lg:px-20'>
+          <div data-aos="zoom-in" className='absolute max-md:mt-10 w-full flex flex-col gap-5 items-center justify-center text-white px-6 lg:px-20'>
             <h1 className='text-3xl lg:text-5xl font-semibold lg:w-[40%] text-center leading-none'>Join Us</h1>
             <p className='lg:w-[60%] text-center max-lg:text-sm'>We invite you to be part of this journey! Whether through prayer, participation, or partnership, you can help us build lives, inspire faith, and transform communities for Christ.</p>
           </div>

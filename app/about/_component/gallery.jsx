@@ -13,7 +13,7 @@ const Gallery = () => {
   
     return (
       <div className="my-16 lg:text-center mt-10 px-6 lg:px-20">
-        <h2 className="text-3xl font-bold mb-5 relative pb-1">
+        <h2 className="text-3xl font-bold mb-5 relative pb-1" data-aos="fade-up">
         Gallery
         <span className="absolute left-0 lg:left-1/2 bottom-0 w-[7%] rounded-full h-1 bg-violet-500"></span>
         </h2>
@@ -23,6 +23,7 @@ const Gallery = () => {
             src={image3} 
             alt="Gallery Image" 
             className="rounded-lg col-span-1 max-lg:w-full"
+            data-aos="zoom-in"
           />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {images.map((src, index) => (
@@ -31,6 +32,7 @@ const Gallery = () => {
                 src={src}
                 alt={`Gallery Image ${index + 2}`} 
                 className="rounded-lg max-lg:w-full"
+                data-aos="zoom-in"
               />
             ))}
           </div>
