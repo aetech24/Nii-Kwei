@@ -5,18 +5,16 @@
 @tailwind utilities;
 
 
-body {
+html,body {
   font-family: 'Poppins', sans-serif;
   background-color: white;
   width: 100%;
   overflow-x: hidden;
 }
 
-/* html{
-  @apply max-lg:overflow-x-hidden;
-} */
 
-#__next {
+
+/* #__next {
   overflow-x: hidden;
-}
+} */
 
