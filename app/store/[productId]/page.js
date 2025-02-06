@@ -9,6 +9,9 @@ import Hero2 from '@/public/stores/mobile-hero.png'
 import { FaStar } from 'react-icons/fa';
 import { useCart } from '@/context/CartContext';
 import { toast } from 'react-hot-toast';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const ProductDetails = ({ params }) => {
   const unwrappedParams = React.use(params)
@@ -81,6 +84,14 @@ const ProductDetails = ({ params }) => {
   const sizes = ["XS", "S", "M", "L", "XL", "2XL"];
   const colors = ["Black", "White", "Navy"];
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-linear",
+      once: false,
+    });
+  }, []);
+
   return (
     <div className="w-full">
       <div className="max-[340px]:h-[90vh] max-sm:h-[70vh] md:h-[60vh] flex items-center justify-center w-full">
@@ -88,7 +99,7 @@ const ProductDetails = ({ params }) => {
         <Image src={Hero2} alt='hero' className="bg-cover lg:hidden bg-center relative w-full h-full" />
         <div className='bg-black absolute w-full bg-opacity-20'></div>
         <div className='absolute max-md:mt-10 w-full flex flex-col gap-5 justify-center text-white px-20'>
-          <h1 className="text-3xl font-semibold relative pb-1">
+          <h1 className="text-3xl font-semibold relative pb-1" data-aos="slide-right">
               Product Details
               <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
           </h1>
