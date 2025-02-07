@@ -135,12 +135,12 @@ const CartPage = () => {
               </div>
               
                 <div className="flex items-center gap-6">
-                  <Link tel="+233591071237">
+                  <Link href="tel:+233591071237">
                     <div className='flex border p-3 rounded border-button'>
                       <FiPhoneCall className='text-2xl text-button'/>
                     </div>
                   </Link>
-                  <Link href="/checkout">
+                  <Link href="/checkout" className='w-full'>
                     <button className="w-full bg-button p-3 rounded-md text-white">Checkout</button>
                   </Link>
                 </div>
