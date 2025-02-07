@@ -40,8 +40,8 @@ const TeamSection = () => {
             />
             <div className="p-4">
               <h3 className="text-xl font-semibold">{member.name}</h3>
-              <p className="text-gray-600">{member.title}</p>
-              <p className="text-gray-500 mt-2">{member.shortDescription}</p>
+              <p className="text-gray-600 font-semibold">{member.title}</p>
+              <p className="text-gray-500 text-[14px] mt-2">{member.shortDescription}</p>
               <button
                 className="text-violet-500 font-medium mt-2 hover:underline"
                 onClick={() => openModal(member)}

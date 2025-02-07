@@ -21,6 +21,22 @@ export const teamMembers = [
       imageUrl: niiKwei11,
     },
     {
+      name: "Ruby Oye Otoo",
+      title: "Administrative Manager",
+      shortDescription: "With over two decades of diverse experience across various industries, Ruby Oye Otoo brings a wealth of expertise, professionalism, and passion to her role as Administrative Manager at Nii Kwei Ministries...",
+      fullDescription:
+        "With over two decades of diverse experience across various industries, Ruby Oye Otoo brings a wealth of expertise, professionalism, and passion to her role as Administrative Manager at Nii Kwei Ministries. Her dedication to the work of the Lord and her commitment to advancing the ministry’s mission make her an invaluable asset to the team. Ruby is a dynamic leader, known for her exceptional organizational skills and ability to foster efficient workflows, ensuring the ministry operates seamlessly to achieve its God-given purpose. She views her administrative role as a form of ministry, supporting the work of Nii Kwei Ministries with diligence and a servant’s heart. Her extensive career has honed her capabilities in administration, team management, and strategic planning, enabling her to address complex challenges with creativity and faith. Ruby’s unwavering commitment to excellence is driven by her deep desire to see God’s kingdom thrive and to empower  the team to fulfill their divine calling. At Nii Kwei Ministries, Ruby plays a pivotal role in overseeing operations, managing resources, and ensuring the smooth execution of programs and activities that impact lives and glorify God. She is deeply passionate about mentoring and inspiring others, creating a culture of collaboration, spiritual growth, and purpose within the organization.",
+      imageUrl: niiKwei5,
+    },
+    {
+      name: "Kellie Twumwaa Twum ",
+      title: "Finance Manager/Treasurer",
+      shortDescription: "Kellie Twumwaa Twum serves as the Finance Manager and Treasurer for Nii Kwei Ministries, bringing a wealth of expertise in actuarial science and finance... ",
+      fullDescription:
+        "Kellie Twumwaa Twum serves as the Finance Manager and Treasurer for Nii Kwei Ministries, bringing a wealth of expertise in actuarial science and finance. She holds a Bachelor’s degree with first-class honors in Actuarial Science from the Kwame Nkrumah University of Science and Technology and an Executive MBA in Finance from the University of Ghana. With over five years of professional experience, Kellie began her career at Stallion Consultants Limited, gaining valuable expertise in actuarial consulting. She later transitioned to the banking sector, where she excelled as a Risk Analyst at Ecobank Ghana. Her leadership and financial acumen ensure that the ministry’s resources are managed with integrity and efficiency, enabling the organization to fulfill its mission and vision. In her role, Kellie is committed to fostering financial stewardship and sustainability, ensuring that Nii Kwei Ministries continues to impact lives and build a Christ-centered legacy.",
+      imageUrl: niiKwei4,
+    },
+    {
       name: "Karen Ofori",
       title: "Outreach Coordinator",
       shortDescription:
@@ -45,22 +61,6 @@ export const teamMembers = [
       fullDescription:
         "Ephraim Apetorgbor serves as the Web Content Manager for Nii Kwei Ministries, bringing a unique blend of technical expertise and a heart for ministry to his role. With 5 years of experience in the corporate world, Ephraim has honed his skills in software engineering and established aeTech Digital Hub, a testament to his innovative mindset and entrepreneurial spirit. Beyond his professional achievements, Ephraim is an active member of his church, serving faithfully as a chorister. His passion for leadership and discipleship greatly informs his work at Nii Kwei Ministries, where he uses his talents to advance the ministry’s mission and connect with others through impactful digital platforms. Driven by a deep desire to serve and make a positive impact, Ephraim’s work embodies his commitment to excellence, both in the corporate space and in ministry. At Nii Kwei Ministries, he plays a crucial role in leveraging technology to enhance communication, engagement, and outreach efforts, ensuring that the ministry’s message reaches and transforms lives.",
       imageUrl: niiKwei3,
-    },
-    {
-      name: "Kellie Twumwaa Twum ",
-      title: "Finance Manager/Treasurer",
-      shortDescription: "Kellie Twumwaa Twum serves as the Finance Manager and Treasurer for Nii Kwei Ministries, bringing a wealth of expertise in actuarial science and finance... ",
-      fullDescription:
-        "Kellie Twumwaa Twum serves as the Finance Manager and Treasurer for Nii Kwei Ministries, bringing a wealth of expertise in actuarial science and finance. She holds a Bachelor’s degree with first-class honors in Actuarial Science from the Kwame Nkrumah University of Science and Technology and an Executive MBA in Finance from the University of Ghana. With over five years of professional experience, Kellie began her career at Stallion Consultants Limited, gaining valuable expertise in actuarial consulting. She later transitioned to the banking sector, where she excelled as a Risk Analyst at Ecobank Ghana. Her leadership and financial acumen ensure that the ministry’s resources are managed with integrity and efficiency, enabling the organization to fulfill its mission and vision. In her role, Kellie is committed to fostering financial stewardship and sustainability, ensuring that Nii Kwei Ministries continues to impact lives and build a Christ-centered legacy.",
-      imageUrl: niiKwei4,
-    },
-    {
-      name: "Ruby Oye Otoo",
-      title: "Administrative Manager",
-      shortDescription: "With over two decades of diverse experience across various industries, Ruby Oye Otoo brings a wealth of expertise, professionalism, and passion to her role as Administrative Manager at Nii Kwei Ministries...",
-      fullDescription:
-        "With over two decades of diverse experience across various industries, Ruby Oye Otoo brings a wealth of expertise, professionalism, and passion to her role as Administrative Manager at Nii Kwei Ministries. Her dedication to the work of the Lord and her commitment to advancing the ministry’s mission make her an invaluable asset to the team. Ruby is a dynamic leader, known for her exceptional organizational skills and ability to foster efficient workflows, ensuring the ministry operates seamlessly to achieve its God-given purpose. She views her administrative role as a form of ministry, supporting the work of Nii Kwei Ministries with diligence and a servant’s heart. Her extensive career has honed her capabilities in administration, team management, and strategic planning, enabling her to address complex challenges with creativity and faith. Ruby’s unwavering commitment to excellence is driven by her deep desire to see God’s kingdom thrive and to empower  the team to fulfill their divine calling. At Nii Kwei Ministries, Ruby plays a pivotal role in overseeing operations, managing resources, and ensuring the smooth execution of programs and activities that impact lives and glorify God. She is deeply passionate about mentoring and inspiring others, creating a culture of collaboration, spiritual growth, and purpose within the organization.",
-      imageUrl: niiKwei5,
     },
     {
       name: "Rene Twum",
