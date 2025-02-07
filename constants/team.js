@@ -8,8 +8,18 @@ import niiKwei7 from "@/public/sam.jpg";
 import niiKwei8 from "@/public/philip.jpg";
 import niiKwei9 from "@/public/precious.jpg";
 import niiKwei10 from "@/public/enock.jpg";
+import niiKwei11 from "@/public/godfred.jpg";
 
 export const teamMembers = [
+    {
+      name: "Godfred Kwei Blankson",
+      title: "Executive Director and Minstrel/Minister",
+      shortDescription:
+        "Godfred Kwei Blankson, with the stage Nii Kwei, is the founder of Nii Kwei Ministries. He is deeply passionate about the things of God, specifically Music, Praise & Worship, Youth  empowerment and...",
+      fullDescription:
+        "Godfred Kwei Blankson, with the stage Nii Kwei, is the founder of Nii Kwei Ministries. He is deeply passionate about the things of God, specifically Music, Praise & Worship, Youth  empowerment and philanthropic activities. A gifted worship leader and songwriter, Nii Kwei serves as the cornerstone of the ministry’s mission to inspire worship and transform lives through Word-based music. His heart for spreading the Gospel drives every aspect of his ministry, from leading worship to empowering deprived youth. He is also the founder of Nii Kwei Community Touch. A foundation focused on outreach in deprived communities. Background: With years of experience in music ministry and community outreach, Nii Kwei combines his spiritual leadership with practical expertise to make a lasting impact. His leadership at Nii Kwei Ministries reflects his dedication to creating spaces where people can encounter God through authentic worship and Gospel-centered outreach. In addition to his ministry work, Nii Kwei brings professional insights from his corporate background in telecoms - fintech, and business development. This experience has shaped his strategic approach to growing the ministry and expanding its outreach. Nii Kwei’s vision is to use his God-given gifts to help build  communities rooted in faith, service, and worship, empowering people to grow spiritually and make a difference in their own lives and the lives of others.",
+      imageUrl: niiKwei11,
+    },
     {
       name: "Karen Ofori",
       title: "Outreach Coordinator",

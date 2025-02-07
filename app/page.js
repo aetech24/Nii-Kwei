@@ -24,7 +24,7 @@ const page = () => {
       once: false,
     });
   }, []);
-  
+
   return (
     <div>
       <div className="h-[100vh] flex items-center justify-center w-full">
@@ -51,7 +51,7 @@ const page = () => {
                   </button>
                 </Link>
                 <Link href='/store' className="max-lg:w-full">
-                  <button className="border w-full border-white py-2 px-6 text-lg rounded-md">Shop</button>
+                  <button className="border w-full border-white py-2 px-6 text-lg rounded-md">Shop Here</button>
                 </Link>
               </div>
             </div>
