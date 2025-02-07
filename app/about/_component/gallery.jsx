@@ -15,7 +15,7 @@ const Gallery = () => {
       <div className="my-16 lg:text-center mt-10 px-6 lg:px-20">
         <h2 className="text-3xl font-bold mb-5 relative pb-1" data-aos="fade-up">
         Gallery
-        <span className="absolute left-0 lg:left-1/2 bottom-0 w-[7%] rounded-full h-1 bg-violet-500"></span>
+        <span className="absolute left-0 lg:left-[45%] bottom-0 w-[7%] rounded-full h-1 bg-violet-500"></span>
         </h2>
         <p className="mb-5">Capturing moments of worship</p>
         <div className="max-md:flex-col flex gap-5">

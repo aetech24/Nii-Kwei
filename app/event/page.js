@@ -121,8 +121,7 @@ const page = () => {
       </div>
       <div className='w-full'>
         <div className='flex flex-col items-center text-2xl md:text-3xl font-semibold'>
-          <h1 data-aos="fade-down" data-aos-duration="2000" className='text-purple'>Join Our Upcoming</h1>
-          <h1 data-aos="fade-down" data-aos-duration="1000" className='text-orange'>Events</h1>
+          <h1 data-aos="fade-down" data-aos-duration="2000" className='text-purple'>Upcoming Events</h1>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-5 py-10 px-4 lg:mx-16 place-items-center'>
           <Image data-aos="flip-right" data-aos-duration="1500" src={Flyer4} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
