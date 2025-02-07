@@ -133,14 +133,17 @@ const CartPage = () => {
                   <span className='text-xl font-semibold'>{getCartTotal()}</span>
                 </div>
               </div>
-              <Link href="/checkout">
+              
                 <div className="flex items-center gap-6">
-                  <div className='flex border p-3 rounded border-button'>
-                    <FiPhoneCall className='text-2xl text-button'/>
-                  </div>
-                  <button className="w-full bg-button p-3 rounded-md text-white">Checkout</button>
+                  <Link tel="+233591071237">
+                    <div className='flex border p-3 rounded border-button'>
+                      <FiPhoneCall className='text-2xl text-button'/>
+                    </div>
+                  </Link>
+                  <Link href="/checkout">
+                    <button className="w-full bg-button p-3 rounded-md text-white">Checkout</button>
+                  </Link>
                 </div>
-              </Link>
             </div>
           </>
         )}
