@@ -55,24 +55,28 @@ const TeamSection = () => {
 
       {/* Modal */}
       {isModalOpen && selectedMember && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-[90%] max-w-lg shadow-lg relative overflow-y-auto h-[90%]">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white rounded-lg p-6 w-[90%] max-w-6xl shadow-lg relative overflow-y-auto h-[80%] lg:h-[90%]">
             <button
               onClick={closeModal}
-              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+              className="absolute top-3 right-3 text-white font-bold hover:text-gray-800 z-100 bg-purple-500 rounded-full p-4"
             >
               ✕
             </button>
-            <Image
-              src={selectedMember.imageUrl}
-              alt={selectedMember.name}
-              width={300}
-              height={300}
-              className="w-full rounded-md mb-4"
-            />
-            <h2 className="text-xl font-bold">{selectedMember.name}</h2>
-            <p className="text-gray-600 mb-2">{selectedMember.title}</p>
-            <p>{selectedMember.fullDescription}</p>
+            <div className="flex gap-4 lg:gap-10 flex-col lg:flex-row">
+              <Image
+                src={selectedMember.imageUrl}
+                alt={selectedMember.name}
+                width={300}
+                height={300}
+                className="lg:w-[40%] w-full h-[80vh] rounded-md mb-4 lg:sticky"
+              />
+              <div className="flex flex-col items-start">
+                <h2 className="text-xl font-bold">{selectedMember.name}</h2>
+                <p className="text-gray-600 mb-2">{selectedMember.title}</p>
+                <p className="text-left">{selectedMember.fullDescription}</p>
+              </div>
+            </div>
           </div>
         </div>
       )}

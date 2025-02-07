@@ -126,9 +126,9 @@ const page = () => {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-5 py-10 px-4 lg:mx-16 place-items-center'>
           <Image data-aos="flip-right" data-aos-duration="1500" src={Flyer4} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
-          <Image data-aos="flip-right" data-aos-duration="1500" src={Flyer1} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
-          <Image data-aos="zoom-in" data-aos-duration="1500" src={Flyer2} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
-          <Image data-aos="flip-left" data-aos-duration="1500" src={Flyer3} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
+          <Image data-aos="zoom-in" data-aos-duration="1500" src={Flyer1} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
+          <Image data-aos="flip-left" data-aos-duration="1500" src={Flyer2} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/>
+          {/* <Image data-aos="flip-left" data-aos-duration="1500" src={Flyer3} alt="" className='w-[400px] h-full border-2 border-orange rounded-lg'/> */}
         </div>
       </div>
 

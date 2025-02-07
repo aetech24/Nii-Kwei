@@ -8,35 +8,24 @@ import Excellence from '@/public/Excellence.png'
 import compassion from '@/public/compassion.png'
 
 
-
-
-
-
 const coreValues = [
   {
-    title: 'Faith',
+    title: 'Faithfulness to God',
     description: 'We are rooted in unwavering faith in God, trusting His promises and seeking His guidance in all we do.',
     subtext: '"Now faith is confidence in what we hope for and assurance about what we do not see."',
     reference: 'Hebrews 11:1',
     icon: <Image className="text-4xl mb-2" src={faith} />,
   },
   {
-    title: 'Community',
-    description: 'We value the power of togetherness, fostering authentic relationships and creating a sense of belonging for all.',
-    subtext: '"And let us consider how we may spur one another on toward love and good deeds."',
-    reference: 'Hebrews 10:24',
+    title: 'Worship as a Lifestyle',
+    description: 'We believe worship extends beyond music into everyday life',
+    subtext: '"So whether you eat or drink or whatever you do, do it all for the glory of God."',
+    reference: '1 Corinthians 10:31',
     icon: <Image className="text-4xl mb-2" src={community} />,
   },
   {
-    title: 'Service',
-    description: 'We demonstrate Christ-like love by humility, compassion, and excellence, reflecting the love of Christ in action.',
-    subtext: '"For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many."',
-    reference: 'Mark 10:45',
-    icon: <Image className="text-4xl mb-2" src={Service} />,
-  },
-  {
     title: 'Integrity',
-    description: 'We uphold honesty, transparency, and accountability in all aspects of our ministry, honoring God in our words and actions.',
+    description: 'We operate with honesty, accountability, and transparency.',
     subtext: '"The integrity of the upright guides them, but the unfaithful are destroyed by their duplicity."',
     reference: 'Proverbs 11:3',
     icon: <Image className="text-4xl mb-2" src={Integrity} />,
@@ -49,10 +38,17 @@ const coreValues = [
     icon: <Image className="text-4xl mb-2" src={Excellence} />,
   },
   {
-    title: 'Compassion',
-    description: 'We demonstrate Christ-like love by being kind and compassionate to one another, forgiving each other.',
-    subtext: '"Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you."',
-    reference: 'Ephesians 4:32',
+    title: 'Service',
+    description: 'We are committed to selfless giving and helping others.',
+    subtext: '"For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many."',
+    reference: 'Mark 10:45',
+    icon: <Image className="text-4xl mb-2" src={Service} />,
+  },
+  {
+    title: 'Legacy',
+    description: 'We aim to leave an enduring impact for generations to come.',
+    subtext: '"A good man leaves an inheritance to his children’s children, but the sinner’s wealth is laid up for the righteous"',
+    reference: 'Proverbs 13:22',
     icon: <Image className="text-4xl mb-2" src={compassion} />,
   },
 ];

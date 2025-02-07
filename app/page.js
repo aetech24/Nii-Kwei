@@ -24,6 +24,7 @@ const page = () => {
       once: false,
     });
   }, []);
+  
   return (
     <div>
       <div className="h-[100vh] flex items-center justify-center w-full">
@@ -44,13 +45,13 @@ const page = () => {
                 </p>
               </div>
               <div className="flex max-md:w-full flex-col lg:flex-row items-center lg:gap-6 gap-3" data-aos="zoom-out">
-                <Link href="/store" className='max-lg:w-full'>
+                <Link href="/book" className='max-lg:w-full'>
                   <button className="bg-button w-full border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-600 transition duration-300">
-                    Shop Now
+                    Book Now
                   </button>
                 </Link>
-                <Link href='/about' className="max-lg:w-full">
-                  <button className="border w-full border-white py-2 px-6 text-lg rounded-md">Learn More</button>
+                <Link href='/store' className="max-lg:w-full">
+                  <button className="border w-full border-white py-2 px-6 text-lg rounded-md">Shop</button>
                 </Link>
               </div>
             </div>
@@ -80,10 +81,6 @@ const page = () => {
             <button className='text-button max-lg:text-center max-lg:w-full'>View All Events {">"}</button>
           </Link>
         </div>
-        <div className='flex flex-col gap-4 px-6 lg:px-16 py-10 w-full items-center'>
-          
-          <FeaturedProducts />
-        </div>
         <div className='relative'>
           <Image src={Deco} alt="deco" className='absolute top-0 left-0 lg:w-48 w-28'/>
           <div className='flex flex-col gap-4 lg:items-center w-full h-full py-24 px-6 lg:px-16'>
@@ -93,6 +90,9 @@ const page = () => {
             </h1>
             <SermonCard />
           </div>
+        </div>
+        <div className='flex flex-col gap-4 px-6 lg:px-16 py-10 w-full items-center'>
+          <FeaturedProducts />
         </div>
         <div className="flex items-center justify-center w-full max-lg:h-[40vh]">
             <Image src={Banner} alt='banner' className="bg-cover max-lg:hidden bg-center relative w-full h-full" />
@@ -104,13 +104,13 @@ const page = () => {
               <Link href='/volunteer' className="bg-button border text-white border-button py-2 px-8 text-lg rounded-md hover:bg-purple-500 duration-300 ease-linear" data-aos="zoom-in">Volunteer</Link>
             </div>
         </div>
-        <div className='flex flex-col gap-6 lg:items-center py-12 px-6 lg:px-16'>
+        {/* <div className='flex flex-col gap-6 lg:items-center py-12 px-6 lg:px-16'>
           <h1 className="text-3xl font-semibold relative pb-1" data-aos="fade-up">
             Where We Are Located
             <span className="absolute left-0 bottom-0 w-20 h-1 bg-violet-500"></span>
           </h1>
           <iframe className='w-full rounded-md' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.6260413691666!2d-0.1759250258576224!3d5.622100294358928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b13b0062aad%3A0x75de9717e31b2442!2sAccra%20Mall!5e0!3m2!1sen!2sgh!4v1737340962099!5m2!1sen!2sgh" width={1100} height={450} style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        </div> */}
     </div>
   )
 }
