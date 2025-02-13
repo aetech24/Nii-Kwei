@@ -134,7 +134,7 @@ const page = () => {
               <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
             </h1>
               <ul>
-                <li className="lg:text-lg">At the heart of Nii Kwei Ministries is a deep passion for worship. We believe worship is more than just music—it is a lifestyle of surrender, reverence, and intimacy with God. Through our music ministry, worship gatherings, and special events, we seek to: <br/>
+                <li className="max-lg:text-sm">At the heart of Nii Kwei Ministries is a deep passion for worship. We believe worship is more than just music—it is a lifestyle of surrender, reverence, and intimacy with God. Through our music ministry, worship gatherings, and special events, we seek to: <br/>
                 <ul className='flex flex-col gap-1 py-4'>
                   {worship.map((item, id) => {
                     return(

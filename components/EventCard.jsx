@@ -8,10 +8,10 @@ import { IoMdTime } from "react-icons/io";
 
 const EventCard = () => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 max-lg:px-4 lg:px-20 py-10' data-aos="flip-left">
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 max-lg:px-4 lg:px-20 py-10'>
         {events.map((item, id) => {
             return(
-                <div key={id} className='border-2 rounded-md'>
+                <div key={id} className='border-2 rounded-md' data-aos="flip-left">
                     <div className='relative'>
                         <Image src={item.image} alt='image' className='rounded-t-md w-full' />
                         <div className='absolute -top-4 -left-5'>
