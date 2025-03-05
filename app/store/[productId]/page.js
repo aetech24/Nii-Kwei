@@ -1,16 +1,16 @@
 "use client"
 
 import { store } from '@/constants/store';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import React, { useState, useEffect } from 'react';
-import Hero from '@/public/stores/hero.png'
-import Hero2 from '@/public/stores/mobile-hero.png'
-import { FaStar } from 'react-icons/fa';
 import { useCart } from '@/context/CartContext';
-import { toast } from 'react-hot-toast';
+import Hero from '@/public/stores/hero.png';
+import Hero2 from '@/public/stores/mobile-hero.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
+import { FaStar } from 'react-icons/fa';
 
 
 const ProductDetails = ({ params }) => {
@@ -24,9 +24,17 @@ const ProductDetails = ({ params }) => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
-  
+
+  // Combine both useEffect hooks at the top level
   useEffect(() => {
     setMounted(true);
+    
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: "ease-linear",
+      once: false,
+    });
   }, []);
 
   // Find the product based on the ID from the URL
@@ -83,14 +91,6 @@ const ProductDetails = ({ params }) => {
 
   const sizes = ["XS", "S", "M", "L", "XL", "2XL"];
   const colors = ["Black", "White", "Navy"];
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-linear",
-      once: false,
-    });
-  }, []);
 
   return (
     <div className="w-full">

@@ -1,5 +1,5 @@
 import niiKwei1 from "@/public/Karen.jpeg";
-import niiKwei2 from "@/public/singer2.png";
+import niiKwei2 from "@/public/cherie.jpg";
 import niiKwei3 from "@/public/Ephraimm.jpeg";
 import niiKwei4 from "@/public/kellie.jpg";
 import niiKwei5 from "@/public/Ruby.jpeg";
