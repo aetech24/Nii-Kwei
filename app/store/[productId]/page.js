@@ -90,7 +90,7 @@ const ProductDetails = ({ params }) => {
   };
 
   const sizes = ["XS", "S", "M", "L", "XL", "2XL"];
-  const colors = ["Black", "White", "Navy"];
+  const colors = ["Black", "White", "Blue", "Gray"];
 
   return (
     <div className="w-full">
@@ -114,7 +114,7 @@ const ProductDetails = ({ params }) => {
               {[1, 2, 3].map((i) => (
                 <div key={i} className="border rounded-md overflow-hidden">
                   <Image
-                    src={product.image}
+                    src={product.images[i]}
                     alt={`Thumbnail ${i}`}
                     width={700}
                     height={500}
@@ -126,7 +126,7 @@ const ProductDetails = ({ params }) => {
             {/* Main Image */}
             <div className="flex-1 bg-gray-100 rounded-lg overflow-hidden">
               <Image
-                src={product.image}
+                src={product.images[0]}
                 alt="Product Image"
                 width={400}
                 height={400}

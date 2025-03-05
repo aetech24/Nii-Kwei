@@ -144,7 +144,7 @@ const page = () => {
 
       <div className="my-16 px-6 md:px-8 lg:px-20 text-left">
   {/* Location Section */}
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 relative" data-aos="fade-up">
+        {/* <h2 className="text-2xl md:text-3xl font-bold mb-4 relative" data-aos="fade-up">
           Our Location
           <span className="absolute left-0 bottom-0 w-[10%] h-1 bg-violet-500"></span>
         </h2>
@@ -160,7 +160,7 @@ const page = () => {
             allowFullScreen
             loading="lazy"
           ></iframe>
-        </div>
+        </div> */}
 
         {/* Contact Information Section */}
         <h2 className="text-2xl md:text-3xl font-bold mb-4 relative" data-aos="fade-up">
@@ -171,7 +171,7 @@ const page = () => {
           <div className="flex flex-col space-y-4">
             <div className="flex items-center gap-2" data-aos="zoom-in">
               <Image placeholder='blur' src={Call} alt="Phone Icon" className="w-6 h-6" />
-              <span className="text-sm md:text-lg">+233 123 456 789</span>
+              <span className="text-sm md:text-lg">+233 201 964 639  /  +233 558 861 040</span>
             </div>
             <div className="flex items-center gap-2" data-aos="zoom-in">
               <Image placeholder='blur' src={Email} alt="Email Icon" className="w-6 h-6" />

@@ -9,6 +9,7 @@ import niiKwei8 from "@/public/philip.jpg";
 import niiKwei9 from "@/public/precious.jpg";
 import niiKwei10 from "@/public/enock.jpg";
 import niiKwei11 from "@/public/godfred.jpg";
+import niiKwei12 from "@/public/yvonne.jpg";
 
 export const teamMembers = [
     {
@@ -85,6 +86,14 @@ export const teamMembers = [
       fullDescription:
         "Philip Asante serves as the Youth Coordinator for Nii Kwei Ministries, where he is dedicated to mentoring and empowering young people to fulfill their God-given potential. With a passion for youth development and leadership, Philip plays a vital role in shaping programs that align with the ministry’s mission to transform lives and build a Christ-centered legacy. Philip’s professional experience includes roles in administration and logistics, such as his time at Jumia Ghana and his ongoing work at Glamek Exclusive Institute. These experiences have honed his organizational and operational skills, which he effectively applies to his ministry work. In addition to his professional background, Philip has demonstrated a strong commitment to leadership and volunteerism. He serves as Vice President of the Glorious Youth Ministry at Fountain of Glory A/G, contributes as a Media Assistant, and supports the church’s children’s department. His volunteer work also extends to the Head of State Award Scheme, where he helps develop young people into confident leaders. Through his work at Nii Kwei Ministries, Philip combines his skills and passion to inspire and uplift the next generation, helping them realize their potential and glorify God in their lives.",
       imageUrl: niiKwei8,
+    },
+    {
+      name: "Yvonne Blankson",
+      title: "Welfare Manager",
+      shortDescription: "Yvonne Blankson serves as the Welfare Manager of Nii Kwei Ministries, bringing her expertise as an HR professional and CEO of Yammy Foods to...",
+      fullDescription:
+        "Yvonne Blankson serves as the Welfare Manager of Nii Kwei Ministries, bringing her expertise as an HR professional and CEO of Yammy Foods to the role. She is committed to fostering a supportive environment that prioritizes the well-being and quality of life of ministry team members, as well as individuals encountered during ministry tours and outreach.Yvonne actively collaborates with team members, organizations, communities, and partners to enhance welfare services, strengthen support systems, and ensure holistic care for individuals, groups, and the ministry as a whole.",
+      imageUrl: niiKwei12,
     },
     {
       name: "Precious Mawunya-Ko",

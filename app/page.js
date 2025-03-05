@@ -46,13 +46,13 @@ const page = () => {
               </div>
               <div className="flex max-md:w-full flex-col lg:flex-row items-center lg:gap-6 gap-3" data-aos="zoom-out">
                 <Link href="/book" className='max-lg:w-full'>
-                  <button className="bg-button w-full border border-button py-2 px-6 text-lg rounded-md hover:bg-purple-600 transition duration-300">
+                  <button className="bg-button w-full border border-button py-2 px-12 text-lg rounded-md hover:bg-purple-600 transition duration-300">
                     Book Now
                   </button>
                 </Link>
-                <Link href='/store' className="max-lg:w-full">
+                {/* <Link href='/store' className="max-lg:w-full">
                   <button className="border w-full border-white py-2 px-6 text-lg rounded-md">Shop Here</button>
-                </Link>
+                </Link> */}
               </div>
             </div>
         </div>
