@@ -27,7 +27,7 @@ const page = () => {
 
   return (
     <div>
-      <div className="h-[100vh] flex items-center justify-center w-full">
+      <div className="h-[100vh] flex items-center justify-center w-full overflow-x-hidden">
             <Image src={Hero} alt='hero' className="lg:object-cover max-lg:hidden object-fill bg-c bg-center relative w-full h-full" />
             <Image src={Hero2} alt='hero' className="lg:object-cover lg:hidden object-fill bg-c bg-center relative w-full h-full" />
             <div className='bg-black absolute w-full bg-opacity-20'></div>
