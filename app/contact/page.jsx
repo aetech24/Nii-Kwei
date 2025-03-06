@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Hero from "@/public/ContactBack.png";
-import Hero2 from "@/public/mobile-contact.png";
-import Image from "next/image";
-import Location from "@/public/Location_Icon.png";
-import Clock from "@/public/Clock.png";
-import Email from "@/public/Email.png";
 import Call from "@/public/Call.png";
+import Clock from "@/public/Clock.png";
+import Hero from "@/public/ContactBack.png";
+import Email from "@/public/Email.png";
+import Hero2 from "@/public/mobile-contact.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
 const page = () => {
@@ -19,6 +18,7 @@ const page = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -28,24 +28,43 @@ const page = () => {
     });
   }, []);
 
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  };
+
   //get the form data
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //make a post request to the server
-    const response = await fetch("https://nii-kwei-server.onrender.com/api/contact/create-contact", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    setIsSubmitting(true);
 
-    //check if the response is successful
-    if (response.ok) {
-      toast.success("Contact created successfully");
-    } else {
-      toast.error("Failed to create contact");
+    try {
+      //make a post request to the server
+      const response = await fetch("https://nii-kwei-server.onrender.com/api/contact/create-contact", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      //check if the response is successful
+      if (response.ok) {
+        toast.success("Message sent successfully");
+        resetForm(); // Reset form after successful submission
+      } else {
+        toast.error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -179,9 +198,17 @@ const page = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="bg-teal-500 text-white font-medium px-6 py-3 rounded-lg hover:bg-teal-600 transition duration-300"
+            disabled={isSubmitting}
+            className="bg-teal-500 text-white font-medium px-6 py-3 rounded-lg hover:bg-teal-600 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[150px]"
           >
-            Send Message
+            {isSubmitting ? (
+              <>
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <span>Sending...</span>
+              </>
+            ) : (
+              'Send Message'
+            )}
           </button>
         </div>
       </div>

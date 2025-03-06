@@ -1,11 +1,11 @@
 "use client";
 
+import { processFormData, submitVolunteerApplication, validateForm } from "@/utils/volunteerFormUtils";
 import React, { useState } from "react";
+import Confirmation from "./Confirmation";
 import Form2 from "./Form2";
 import Form3 from "./Form3";
-import Confirmation from "./Confirmation";
 import Form4 from "./Form4";
-import { validateForm, processFormData, submitVolunteerApplication } from "@/utils/volunteerFormUtils";
 
 const Volunteer = () => {
   const [currentStep, setCurrentStep] = useState(1);

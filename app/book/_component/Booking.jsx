@@ -1,11 +1,11 @@
 "use client"
 
+import { validateForm } from "@/utils/bookingUtils";
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
+import BookingConfirmation from "./BookingConfirmation";
 import Form2 from "./Form2";
 import Form3 from "./Form3";
-import BookingConfirmation from "./BookingConfirmation";
-import { validateForm, submitBookingRequest, processFormData } from "@/utils/bookingUtils";
-import { toast } from "react-hot-toast";
 
 const Booking = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -19,7 +19,6 @@ const Booking = () => {
     phone: "",
     additionalInfo: "",
     guestCount: "",
-    selectedMinister: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,22 +50,49 @@ const Booking = () => {
 
     setIsSubmitting(true);
     try {
-      const processedData = processFormData(formData);
-      const response = await submitBookingRequest(processedData);
-      if (response.success) {
-        setSubmittedData({ 
-          ...formData, 
-          bookingId: response.bookingId,
-          submissionDate: new Date().toLocaleDateString()
-        });
-        setIsSubmitted(true);
-        toast.success("Booking request submitted successfully!");
-      } else {
-        throw new Error("Submission failed");
+      // Format the data to match the backend DTO
+      const bookingData = {
+        eventName: formData.eventName,
+        date: formData.eventDate,
+        time: formData.eventTime,
+        eventType: formData.eventType,
+        location: "To be confirmed", // Add this field to your form if needed
+        description: formData.additionalInfo || "No description provided",
+        fullName: formData.fullName,
+        emailAddress: formData.email,
+        phoneNumber: formData.phone,
+        numberOfPeople: parseInt(formData.guestCount),
+        specialRequests: formData.additionalInfo || "No special requests"
+      };
+
+      console.log('Sending booking data:', bookingData); // For debugging
+
+      const response = await fetch("https://nii-kwei-server.onrender.com/api/booking/create-booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+        credentials: "include"
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.log('Server error response:', errorData); // For debugging
+        throw new Error(errorData.message || "Failed to submit booking");
       }
+
+      const data = await response.json();
+      setSubmittedData({ 
+        ...formData, 
+        bookingId: data.bookingId || Date.now().toString(),
+        submissionDate: new Date().toLocaleDateString()
+      });
+      setIsSubmitted(true);
+      toast.success("Booking request submitted successfully!");
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error("Failed to submit booking request. Please try again.");
+      toast.error(error.message || "Failed to submit booking request. Please try again.");
       setErrors({ submit: "Failed to submit booking request. Please try again." });
     } finally {
       setIsSubmitting(false);
