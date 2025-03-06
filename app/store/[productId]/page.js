@@ -114,7 +114,7 @@ const ProductDetails = ({ params }) => {
               {[1, 2, 3].map((i) => (
                 <div key={i} className="border rounded-md overflow-hidden">
                   <Image
-                    src={product.images[i]}
+                    src={product.image[i]}
                     alt={`Thumbnail ${i}`}
                     width={700}
                     height={500}
@@ -126,7 +126,7 @@ const ProductDetails = ({ params }) => {
             {/* Main Image */}
             <div className="flex-1 bg-gray-100 rounded-lg overflow-hidden">
               <Image
-                src={product.images[0]}
+                src={product.image[0]}
                 alt="Product Image"
                 width={400}
                 height={400}
@@ -145,7 +145,7 @@ const ProductDetails = ({ params }) => {
                 ))}
                 <span className="text-sm text-gray-500">(7 reviews)</span>
               </div>
-              <div className="text-xl font-semibold">${product.price.toFixed(2)}</div>
+              <div className="text-xl font-semibold">GH₵{product.price.toFixed(2)}</div>
             </div>
 
             {/* Size Selection */}

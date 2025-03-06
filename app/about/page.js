@@ -1,19 +1,19 @@
 "use client"
 
-import React, {useEffect} from 'react'
 import Hero from '@/public/Background.png';
-import Hero2 from '@/public/mobile-about.png';
-import Outreach from '@/public/outreach.png';
-import Worship from '@/public/worship.png';
 import Singer1 from '@/public/Image1.png';
 import Singer2 from '@/public/Image2.png';
-import Banner from '@/public/banner.png'
-import Banner2 from '@/public/mobile-banner.png'
+import Banner from '@/public/banner.png';
+import Hero2 from '@/public/mobile-about.png';
+import Banner2 from '@/public/mobile-banner.png';
+import Worship from '@/public/worship.png';
+import { useEffect } from 'react';
 // import Founder2 from '@/public/Image2.png';
 // import Founder3 from '@/public/Image3.png';
-import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Image from 'next/image';
+import RotatingImage from './_component/RotatingImage';
 import Gallery from './_component/gallery';
 import TeamSection from './_component/team';
 import Values from './_component/values';
@@ -28,7 +28,7 @@ const Do = [
 ]
 
 const worship = [
-  {info: "Create a powerful atmosphere of God’s presence"},
+  {info: "Create a powerful atmosphere of God's presence"},
   {info: "Encourage believers to worship in spirit and in truth"},
   {info: "Use music as a tool for healing, breakthrough, and transformation"}
 ]
@@ -83,7 +83,7 @@ const page = () => {
                 <span className="absolute left-0 bottom-0 w-[25%] h-1 bg-violet-500"></span>
               </h1>
               <ul>
-                <li className="max-lg:text-sm">At Nii Kwei Ministries, our mission is to transform lives and build a Christ-centered legacy through worship, discipleship, and outreach. We are committed to equipping believers, raising leaders, and advancing God’s kingdom through faith-driven initiatives.</li>
+                <li className="max-lg:text-sm">At Nii Kwei Ministries, our mission is to transform lives and build a Christ-centered legacy through worship, discipleship, and outreach. We are committed to equipping believers, raising leaders, and advancing God's kingdom through faith-driven initiatives.</li>
               </ul>
             </div>
           </div>
@@ -113,7 +113,9 @@ const page = () => {
             </div>
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10 mt-10 lg:mt-20'>
-          <Image src={Outreach} alt="Singer Nii Kwei" width={700} height={500} className="max-lg:order-2" data-aos="fade-right" />
+          <div className="max-lg:order-2" data-aos="fade-right">
+            <RotatingImage />
+          </div>
             <div className="flex flex-col gap-3" data-aos="fade-left">
               <h1 className="text-2xl lg:text-3xl font-semibold relative pb-1">
                 Outreach Mission

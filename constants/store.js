@@ -5,28 +5,26 @@ import FountainOfGlory from '@/public/stores/fountain_of_glory.jpg'
 import FountainOfGloryBlack from '@/public/stores/fountain_of_glory_black.jpg'
 import FountainOfGloryWhite from '@/public/stores/fountain_of_glory_white.jpg'
 import FountainOfGloryGray from '@/public/stores/fountain_of_glory_gray.jpg'
-// import LetJudahLeadBlack from '@/public/stores/let_judah_black.jpg'
-// import LetJudahLeadWhite from '@/public/stores/let_judah_white.jpg'
-// import LetJudahLeadNavy from '@/public/stores/let_judah_navy.jpg'
 import Hoodie from '@/public/stores/hoodie.jpg'
 import LetJudahLead from '@/public/stores/let_judah.jpg'
 
 export const store = [
     {
-        image: FountainOfGlory,
-        images: [FountainOfGlory, FountainOfGloryBlack, FountainOfGloryWhite, FountainOfGloryGray],
+        images: FountainOfGlory,
+        image: [FountainOfGlory, FountainOfGloryBlack, FountainOfGloryWhite, FountainOfGloryGray],
         name: "Foundation of Glory T-Shirt",
         category: "Clothing",
-        price: 20.00,
+        price: 75.00,
         description: "Comfortable cotton t-shirt featuring our ministry logo. Perfect for casual wear and showing your support.",
         sizes: ["S", "M", "L", "XL"],
         inStock: true
     },
     {
-        image: LetJudahLead,
+        images: LetJudahLead,
+        image: [LetJudahLead, LetJudahLead, LetJudahLead, LetJudahLead],
         name: "Let Judah Lead T-Shirt",
         category: "Clothing",
-        price: 20.00,
+        price: 75.00,
         description: "Comfortable cotton t-shirt featuring our ministry logo. Perfect for casual wear and showing your support.",
         sizes: ["S", "M", "L", "XL"],
         inStock: true
@@ -42,7 +40,7 @@ export const store = [
     // },
     // {image: Bag, name: "Scripture Tote Bag", category: "Accessories", price: 18.00},
     // {image: CD, name: "Worship Album Download", category: "Digital Product", price: 7.00},
-    {image: Hoodie, name: "Faith Hoodie", category: "Clothing", price: 28.00},
+    {images: Hoodie, image: [Hoodie, Hoodie, Hoodie, Hoodie], name: "Faith Hoodie", category: "Clothing", price: 350.00},
     // {image: Mug, name: "Inspirational Mug", category: "Accessories", price: 15.00},
 ]
 

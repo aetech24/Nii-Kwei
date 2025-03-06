@@ -33,7 +33,7 @@ const StoreCard = () => {
         return (
           <Link href={`/store/${id}`} key={id}>
             <div className='flex flex-col gap-2 shadow-xl pb-4 rounded-md transition duration-300 hover:shadow-2xl' data-aos="zoom-in">
-              <Image src={item.image} alt={item.name} className='rounded-t-md'/>
+              <Image src={item.images} alt={item.name} className='rounded-t-md'/>
               <div className='flex flex-col gap-1 px-4'>
                 <p>{item.category}</p>
                 <p className='text-xl font-semibold'>{item.name}</p>
