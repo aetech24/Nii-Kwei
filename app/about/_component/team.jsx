@@ -69,7 +69,7 @@ const TeamSection = () => {
                 alt={selectedMember.name}
                 width={300}
                 height={300}
-                className="lg:w-[40%] w-full h-[80vh] rounded-md mb-4 lg:sticky"
+                className="lg:w-[40%] w-full lg:h-[80vh] h-[45vh] rounded-md mb-4 lg:sticky"
               />
               <div className="flex flex-col items-start">
                 <h2 className="text-xl font-bold">{selectedMember.name}</h2>
